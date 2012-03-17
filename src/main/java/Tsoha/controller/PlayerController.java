@@ -24,7 +24,7 @@ public class PlayerController {
     @RequestMapping(value="/peli", method = RequestMethod.GET)
     public String getPeli(Model model){
         model.addAttribute("peli", new Peli());
-        model.addAttribute("teams", genreService.list());
+        model.addAttribute("genret", genreService.list());
         return "player";
     }
 }
