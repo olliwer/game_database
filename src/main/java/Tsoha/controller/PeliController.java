@@ -4,7 +4,7 @@
  */
 package tsoha.controller;
 
-import Tsoha.service.PeliPalvelu;
+import Tsoha.service.PeliService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class PeliController {
 
     @Autowired
-    private PeliPalvelu peliPalvelu;
+    private PeliService peliService;
 
     @RequestMapping(value = "toka")
     public String toka() {
