@@ -12,6 +12,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <c:forEach var="peli" items="${pelit}">
+                <li>${peli.id}, Peli: ${peli.nimi}</li>
+            </c:forEach>
     </body>
 </html>

@@ -14,4 +14,5 @@ import java.util.List;
 public interface PeliService {
     public void saveOrUpdate(Peli peli, Long genreId);
     public List<Peli> listAll();
+    public Peli lisaa(Peli peli);
 }

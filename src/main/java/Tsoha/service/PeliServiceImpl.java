@@ -40,4 +40,10 @@ public class PeliServiceImpl implements PeliService {
         return peliRepository.findAll();
     }
     
+    @Override
+    @Transactional
+    public Peli lisaa(Peli peli){
+        return(peliRepository.save(peli));
+    }
+    
 }

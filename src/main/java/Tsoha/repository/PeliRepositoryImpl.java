@@ -6,6 +6,8 @@ package Tsoha.repository;
 
 import Tsoha.domain.Peli;
 import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -19,9 +21,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class PeliRepositoryImpl implements PeliRepository {
 
+    @PersistenceContext
+    private EntityManager entityManager;
+    
     @Override
     public List<Peli> findAll() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return entityManager.find(null, this);
     }
 
     @Override
@@ -36,7 +41,7 @@ public class PeliRepositoryImpl implements PeliRepository {
 
     @Override
     public void flush() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        entityManager.flush();
     }
 
     @Override
@@ -56,7 +61,7 @@ public class PeliRepositoryImpl implements PeliRepository {
 
     @Override
     public Peli save(Peli t) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        entityManager.
     }
 
     @Override

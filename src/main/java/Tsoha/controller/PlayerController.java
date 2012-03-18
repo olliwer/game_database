@@ -19,17 +19,17 @@ public class PlayerController {
     @Autowired
     private GenreService genreService;
     
-    @RequestMapping(value="/test", method = RequestMethod.GET)
+    @RequestMapping(value="/test1", method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("pelit", peliService.listAll());
-        return "list";
+        return "index";
     }
     
     @RequestMapping(value="/peli", method = RequestMethod.GET)
     public String getPeli(Model model){
         model.addAttribute("peli", new Peli());
         model.addAttribute("genret", genreService.listAll());
-        return "player";
+        return "index";
     }
 }
 
