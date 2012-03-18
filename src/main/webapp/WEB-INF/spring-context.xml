@@ -35,7 +35,7 @@
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <!-- älä muuta persistence.xml -tiedoston sijaintia  -->
         <property name="persistenceXmlLocation" value="classpath:persistence.xml" />
-        <property name="persistenceUnitName" value="persistenceUnitEclipseLink" /> 
+        <property name="persistenceUnitName" value="persistence" />  
         <property name="dataSource" ref="dataSource"/>
         <property name="jpaVendorAdapter">
             <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter" />
