@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
-@Entity(name="GENRE")
+@Entity
 public class Genre implements Serializable {
     
     @Id

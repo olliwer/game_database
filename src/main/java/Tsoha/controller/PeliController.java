@@ -2,8 +2,9 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package tsoha.controller;
+package Tsoha.controller;
 
+import Tsoha.service.GenreService;
 import Tsoha.service.PeliService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,9 @@ public class PeliController {
 
     @Autowired
     private PeliService peliService;
+    
+    @Autowired
+    private GenreService genreService;
 
     @RequestMapping(value = "/home")
     public String home(Model model) {

@@ -1,7 +1,8 @@
-package tsoha.controller;
+package Tsoha.controller;
 
 import Tsoha.domain.Peli;
 import Tsoha.service.PeliService;
+import Tsoha.service.GenreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,6 +16,9 @@ public class PlayerController {
     @Autowired
     private PeliService peliService;
     
+    @Autowired
+    private GenreService genreService;
+    
     @RequestMapping(value="/test", method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("pelit", peliService.listAll());
@@ -24,7 +28,7 @@ public class PlayerController {
     @RequestMapping(value="/peli", method = RequestMethod.GET)
     public String getPeli(Model model){
         model.addAttribute("peli", new Peli());
-        model.addAttribute("genret", genreService.list());
+        model.addAttribute("genret", genreService.listAll());
         return "player";
     }
 }
