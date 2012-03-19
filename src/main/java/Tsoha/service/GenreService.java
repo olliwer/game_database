@@ -11,4 +11,5 @@ public interface GenreService {
     
     public void saveOrUpdate(Genre genre, Long peliId);
     public List<Genre> listAll();
+    public Genre add(Genre genre);
 }
