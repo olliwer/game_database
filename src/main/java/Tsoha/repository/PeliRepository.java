@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
  * @author Noemj
  */
 
-@Repository
 public interface PeliRepository extends JpaRepository<Peli, Long> {
     
 }
