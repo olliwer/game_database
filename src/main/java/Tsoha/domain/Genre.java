@@ -21,6 +21,14 @@ public class Genre implements Serializable {
         return id;
     }
 
+    public List<Peli> getPelit() {
+        return pelit;
+    }
+
+    public void setPelit(List<Peli> pelit) {
+        this.pelit = pelit;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }

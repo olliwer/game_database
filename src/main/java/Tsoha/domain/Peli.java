@@ -31,6 +31,14 @@ public class Peli implements Serializable {
     public void setId(int peliId) {
         this.id = id;
     }
+
+    public int getNimi() {
+        return nimi;
+    }
+
+    public void setNimi(int nimi) {
+        this.nimi = nimi;
+    }
     
     public Genre getGenre(){
         return genre;
