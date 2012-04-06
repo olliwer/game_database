@@ -13,6 +13,6 @@ import org.springframework.stereotype.Repository;
  * @author Dragondejavu
  */
 
-public interface KommenttiRepository extends JpaRepository<Kommentti, Long>{
+public interface KommenttiRepository extends JpaRepository<Kommentti, Integer>{
     
 }

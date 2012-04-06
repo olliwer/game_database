@@ -15,6 +15,6 @@ import org.springframework.stereotype.Repository;
  * @author Noemj
  */
 
-public interface PeliRepository extends JpaRepository<Peli, Long> {
+public interface PeliRepository extends JpaRepository<Peli, Integer> {
    // List<Peli> findPeli();
 }

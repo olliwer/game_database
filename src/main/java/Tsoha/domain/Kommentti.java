@@ -21,12 +21,12 @@ public class Kommentti implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "ID")
-    private Long id;
+    private Integer id;
     
     @Column(name = "Viesti")
     private String viesti;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -34,7 +34,7 @@ public class Kommentti implements Serializable {
         return viesti;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

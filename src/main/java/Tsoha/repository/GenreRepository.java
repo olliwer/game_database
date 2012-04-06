@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
  *
  * @author Noemj
  */
-public interface GenreRepository extends JpaRepository<Genre, Long> {
+public interface GenreRepository extends JpaRepository<Genre, Integer> {
     
 }

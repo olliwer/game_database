@@ -13,7 +13,7 @@ public class Peli implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name = "ID")
-    private Long id;
+    private Integer id;
     
     //@Pattern(regexp="\\w+")
     @NotNull(message = "Pitäähän pelillä nyt nimi olla..")
@@ -24,11 +24,11 @@ public class Peli implements Serializable {
     @Column(name = "Genre")
     private Genre genre;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int peliId) {
+    public void setId(Integer peliId) {
         this.id = id;
     }
 
@@ -36,7 +36,7 @@ public class Peli implements Serializable {
         return nimi;
     }
 
-    public void setNimi(int nimi) {
+    public void setNimi(Integer nimi) {
         this.nimi = nimi;
     }
 

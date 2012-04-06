@@ -12,12 +12,12 @@ public class Genre implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name="ID")
-    private Long id;
+    private Integer id;
     
     @OneToMany
     private List<Peli> pelit;
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -29,7 +29,7 @@ public class Genre implements Serializable {
         this.pelit = pelit;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
     
