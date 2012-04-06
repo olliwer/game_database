@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface GenreService {
     
-    public void saveOrUpdate(Genre genre, Long peliId);
+    public void remove(Genre genre);
     public List<Genre> listAll();
     public Genre add(Genre genre);
 }

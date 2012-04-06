@@ -22,8 +22,8 @@ public class PeliServiceImpl implements PeliService {
     PeliRepository peliRepository;
 
     @Override
-    public void saveOrUpdate(Peli peli, Long genreId) {
-        peliRepository.save(peli);
+    public void remove(Peli peli) {
+        peliRepository.delete(peli);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class PeliServiceImpl implements PeliService {
     }
 
     @Override
-    public Peli lisaa(Peli peli) {
+    public Peli add(Peli peli) {
         return(peliRepository.save(peli));
     }
     

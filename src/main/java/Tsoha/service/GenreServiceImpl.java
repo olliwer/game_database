@@ -22,8 +22,8 @@ public class GenreServiceImpl implements GenreService{
     GenreRepository genreRepository;
     
     @Override
-    public void saveOrUpdate(Genre genre, Long peliId) {
-        genreRepository.save(genre);
+    public void remove(Genre genre) {
+        genreRepository.delete(genre);
     }
 
     @Override

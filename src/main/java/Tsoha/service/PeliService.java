@@ -12,7 +12,7 @@ import java.util.List;
  * @author Noemj
  */
 public interface PeliService {
-    public void saveOrUpdate(Peli peli, Long genreId);
+    public void remove(Peli peli);
     public List<Peli> listAll();
-    public Peli lisaa(Peli peli);
+    public Peli add(Peli peli);
 }
