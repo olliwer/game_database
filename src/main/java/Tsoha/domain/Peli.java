@@ -21,7 +21,6 @@ public class Peli implements Serializable {
     private int nimi;
     
     @ManyToOne(cascade = {CascadeType.ALL})
-    @Column(name = "Genre")
     private Genre genre;
 
     public Integer getId() {
