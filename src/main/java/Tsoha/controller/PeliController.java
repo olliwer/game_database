@@ -50,7 +50,7 @@ public class PeliController {
     
     @RequestMapping(value = "/lisaa",method = RequestMethod.POST)
     public String lisaa(@ModelAttribute Peli peli){
-        peli = peliService.lisaa(peli);
+        peli = peliService.add(peli);
         return "main";
     }
 
