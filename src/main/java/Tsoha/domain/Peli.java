@@ -1,6 +1,4 @@
-
 package Tsoha.domain;
-
 
 import java.io.Serializable;
 import java.util.List;
@@ -11,17 +9,19 @@ import javax.validation.constraints.Size;
 
 @Entity
 public class Peli implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-    @Column(name="ID")
+    @Column(name = "ID")
     private Long id;
     
     //@Pattern(regexp="\\w+")
-    @NotNull(message="Pitäähän pelillä nyt nimi olla..")
+    @NotNull(message = "Pitäähän pelillä nyt nimi olla..")
+    @Column(name = "Name")
     private int nimi;
     
-    @ManyToOne(cascade={CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @Column(name = "Genre")
     private Genre genre;
 
     public Long getId() {
@@ -39,13 +39,12 @@ public class Peli implements Serializable {
     public void setNimi(int nimi) {
         this.nimi = nimi;
     }
-    
-    public Genre getGenre(){
+
+    public Genre getGenre() {
         return genre;
     }
-    
-    public void setGenre(Genre genre){
+
+    public void setGenre(Genre genre) {
         this.genre = genre;
     }
-    
 }
