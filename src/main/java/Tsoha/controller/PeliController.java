@@ -24,15 +24,21 @@ public class PeliController {
     @Autowired
     private GenreService genreService;
 
-    @RequestMapping(value = "/lisaa",method = RequestMethod.POST)
+    @RequestMapping(value = "/lisaaPelaaja",method = RequestMethod.GET)
     public String lisaa(@ModelAttribute Peli peli){
+        System.out.println("Pelin nimi: " + peli.getNimi());
         peli = peliService.add(peli);
-        return "listaa";
+        return "listaaPelaaja";
     }
 
-    @RequestMapping(value = "/listaa",method = RequestMethod.GET)
+    @RequestMapping(value = "/listaaPelaaja")
     public String listaa(Model model){
         model.addAttribute("pelit", peliService.listAll());
         return "listaa";
+    }
+    
+    @RequestMapping(value = "/lisaa")
+    public String lisaaKuuntelija(){
+        return "lisaa";
     }
 }

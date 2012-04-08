@@ -8,11 +8,8 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="lisaa" method="POST">
-            <span>Peli: <input type="text" name="nimi" ></span><br>
-            
-            <!--<span>Genre: <input type="text" name="genre" ></span><br> -->
-            <!--<span>Arvosana: <input type="text" name="rate" ></span><br> -->
+        <form action="lisaaPelaaja" method="GET">
+            <span>Nimi: <input type="text" name="nimi" ></span><br>
             <input type="submit">
         </form>
     </body>

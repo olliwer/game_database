@@ -29,6 +29,7 @@
         
         <context:annotation-config />
         
+        <!-- database -->
         <jdbc:embedded-database id="dataSource" type="HSQL"/>
     
 
@@ -43,11 +44,14 @@
                 <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> 
             </property>
         </bean>
-        <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-            <property name="entityManagerFactory" ref="entityManagerFactory"/>
-        </bean>
+        
+        <!-- Hallinnoidaan transaktioita automaattisesti -->
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
     
         <tx:annotation-driven transaction-manager="transactionManager" />
+        
         <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
         <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
         <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
