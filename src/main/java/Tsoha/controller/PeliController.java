@@ -24,34 +24,15 @@ public class PeliController {
     @Autowired
     private GenreService genreService;
 
-    @RequestMapping(value = "/home")
-    public String home(Model model) {
-        model.addAttribute("pelit", peliService.listAll());
-        model.addAttribute("genret", genreService.listAll());
-        return "index";
-    }
-    
-    @RequestMapping(value = "poista/{peliId}")
-    public String poista(@PathVariable Integer peliId){
-        
-        return "index";
-    }
-    
-    @RequestMapping(value = "/test")
-    public String test(){
-        return "index";
-    }
-    
-    @RequestMapping(value = "/main",method = RequestMethod.GET)
-    public String main(Model model){
-        model.addAttribute("pelit", peliService.listAll());
-        return "main";
-    }
-    
     @RequestMapping(value = "/lisaa",method = RequestMethod.POST)
     public String lisaa(@ModelAttribute Peli peli){
         peli = peliService.add(peli);
-        return "main";
+        return "listaa";
     }
 
+    @RequestMapping(value = "/listaa",method = RequestMethod.GET)
+    public String listaa(Model model){
+        model.addAttribute("pelit", peliService.listAll());
+        return "listaa";
+    }
 }
