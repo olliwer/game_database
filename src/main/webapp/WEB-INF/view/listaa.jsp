@@ -12,7 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <c:forEach var="peli" items="${pelit}">
+        <c:forEach var="pelit" items="${pelit}">
                 <li>${peli.id}, Peli: ${peli.nimi}</li>
             </c:forEach>
     </body>
