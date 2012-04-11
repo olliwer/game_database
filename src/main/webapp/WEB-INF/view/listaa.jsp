@@ -15,5 +15,7 @@
         <c:forEach var="peli" items="${pelit}">
                 <li>${peli.id}, Peli: ${peli.nimi}</li>
             </c:forEach>
+            
+            <a href="lisaa">Lis‰‰ peli</a>
     </body>
 </html>

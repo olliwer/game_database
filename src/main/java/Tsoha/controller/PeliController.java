@@ -21,6 +21,11 @@ public class PeliController {
     @Autowired
     private GenreService genreService;
 
+    @RequestMapping(value = "*")
+    public String kuuntele(){
+        return "lisaa";
+    }
+    
     @RequestMapping(value = "/lisaaPeli",method = RequestMethod.POST)
     public String lisaa(@ModelAttribute Peli peli){
         peli = peliService.add(peli);
@@ -29,6 +34,7 @@ public class PeliController {
 
     @RequestMapping(value = "/listaaPeli")
     public String listaa(Model model){
+        System.out.println(peliService.listAll());
         model.addAttribute("pelit", peliService.listAll());
         return "listaa";
     }
