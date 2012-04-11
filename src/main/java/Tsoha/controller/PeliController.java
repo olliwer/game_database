@@ -5,6 +5,7 @@
 package Tsoha.controller;
 
 import Tsoha.domain.Peli;
+import Tsoha.domain.Genre;
 import Tsoha.service.GenreService;
 import Tsoha.service.PeliService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,18 +27,27 @@ public class PeliController {
         return "lisaa";
     }
     
-    @RequestMapping(value = "/lisaaPeli",method = RequestMethod.POST)
+    @RequestMapping(value = "lisaaPeli",method = RequestMethod.POST)
     public String lisaa(@ModelAttribute Peli peli){
         peli = peliService.add(peli);
-        return "redirect:/listaaPeli";
+        return "redirect:/listaa";
+    }
+    
+     @RequestMapping(value = "lisaaGenre",method = RequestMethod.POST)
+    public String lisaa(@ModelAttribute Genre genre){
+        genre = genreService.add(genre);
+        return "redirect:/listaa";
     }
 
-    @RequestMapping(value = "/listaaPeli")
-    public String listaa(Model model){
-        System.out.println(peliService.listAll());
+
+    @RequestMapping(value = "listaa")
+    public String listaaPeli(Model model){
         model.addAttribute("pelit", peliService.listAll());
+        model.addAttribute("genret", genreService.listAll());
         return "listaa";
     }
+    
+ 
     
     @RequestMapping(value = "/lisaa")
     public String lisaaKuuntelija(){

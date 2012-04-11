@@ -14,11 +14,22 @@ public class Genre implements Serializable {
     @Column(name="ID")
     private Integer id;
     
+    @Column
+    private String nimi;
+    
     @OneToMany
     private List<Peli> pelit;
 
     public Integer getId() {
         return id;
+    }
+
+    public String getNimi() {
+        return nimi;
+    }
+
+    public void setNimi(String nimi) {
+        this.nimi = nimi;
     }
 
     public List<Peli> getPelit() {

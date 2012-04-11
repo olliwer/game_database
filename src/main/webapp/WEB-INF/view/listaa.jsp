@@ -3,7 +3,7 @@
     Created on : Mar 17, 2012, 7:28:18 PM
     Author     : Noemj
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="windows-1252"%>
 <!DOCTYPE html>
 <html>
@@ -16,6 +16,10 @@
                 <li>${peli.id}, Peli: ${peli.nimi}</li>
             </c:forEach>
             
-            <a href="lisaa">Lisää peli</a>
+            <c:forEach var="genre" items="${genret}">
+                <li>${genre.id}, Genre: ${genre.nimi}</li>
+            </c:forEach>
+            
+            <a href="lisaa">Lisää peli tai genre</a>
     </body>
 </html>
