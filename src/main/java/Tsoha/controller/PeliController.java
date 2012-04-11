@@ -10,10 +10,7 @@ import Tsoha.service.PeliService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class PeliController {
@@ -24,14 +21,13 @@ public class PeliController {
     @Autowired
     private GenreService genreService;
 
-    @RequestMapping(value = "/lisaaPelaaja",method = RequestMethod.GET)
+    @RequestMapping(value = "/lisaaPeli",method = RequestMethod.POST)
     public String lisaa(@ModelAttribute Peli peli){
-        System.out.println("Pelin nimi: " + peli.getNimi());
         peli = peliService.add(peli);
-        return "listaaPelaaja";
+        return "redirect:/listaaPeli";
     }
 
-    @RequestMapping(value = "/listaaPelaaja")
+    @RequestMapping(value = "/listaaPeli")
     public String listaa(Model model){
         model.addAttribute("pelit", peliService.listAll());
         return "listaa";

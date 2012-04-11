@@ -8,7 +8,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="lisaaPelaaja" method="GET">
+        <form action="lisaaPeli" method="POST">
             <span>Nimi: <input type="text" name="nimi" ></span><br>
             <input type="submit">
         </form>

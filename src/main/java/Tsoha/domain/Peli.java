@@ -18,7 +18,7 @@ public class Peli implements Serializable {
     //@Pattern(regexp="\\w+")
     @NotNull(message = "Pitäähän pelillä nyt nimi olla..")
     @Column(name = "Name")
-    private int nimi;
+    private String nimi;
     
     @ManyToOne(cascade = {CascadeType.ALL})
     private Genre genre;
@@ -31,11 +31,11 @@ public class Peli implements Serializable {
         this.id = id;
     }
 
-    public int getNimi() {
+    public String getNimi() {
         return nimi;
     }
 
-    public void setNimi(Integer nimi) {
+    public void setNimi(String nimi) {
         this.nimi = nimi;
     }
 
