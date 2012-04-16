@@ -23,7 +23,7 @@ public class Peli implements Serializable {
     @ManyToOne(cascade = {CascadeType.ALL})
     private Genre genre;
     
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @OneToMany(cascade = {CascadeType.ALL})
     private List<Kommentti> kommentit;
 
     public Integer getId() {
@@ -39,7 +39,7 @@ public class Peli implements Serializable {
     }
 
     public void setId(Integer peliId) {
-        this.id = id;
+        this.id = peliId;
     }
 
     public String getNimi() {

@@ -25,20 +25,46 @@ public class Kommentti implements Serializable {
     
     @Column(name = "Fields")
     private String fields;
-
-    public Integer getId() {
-        return id;
-    }
+    
+    @OneToOne(cascade = {CascadeType.ALL})
+    private Peli peli;
+    
+    @Column(name = "PelinId")
+    private Integer pelinId;
 
     public String getFields() {
         return fields;
+    }
+
+    public void setFields(String fields) {
+        this.fields = fields;
+    }
+
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
     }
 
-    public void setFields(String viesti) {
-        this.fields = viesti;
+    public Peli getPeli() {
+        return peli;
     }
+
+    public void setPeli(Peli peli) {
+        this.peli = peli;
+    }
+
+    public Integer getPelinId() {
+        return pelinId;
+    }
+
+    public void setPelinId(Integer pelinId) {
+        this.pelinId = pelinId;
+    }
+
+  
+    
+    
 }

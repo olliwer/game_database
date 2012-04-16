@@ -62,16 +62,18 @@ public class PeliController {
 
     @RequestMapping(value = "kommentoi/{peliId}")
     public String kommentoiPelia(@PathVariable Integer peliId, Model model) {
-        System.out.println(peliService.findPeli(peliId).getNimi());
-        model.addAttribute("games", peliService.findPeli(peliId));
+        System.out.println(peliService.findPeli(peliId).getNimi());     
+        model.addAttribute("peli", peliService.findPeli(peliId));
         return "kommentoi";
     }
 
-    @RequestMapping(value = "lisaaKommentti")
-    public String lisaaKommentti(@ModelAttribute Kommentti kommentti) {
+    @RequestMapping(value = "lisaaKommentti/{peliId}")
+    public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {
         kommenttiService.add(kommentti);
-        //model..
-        return "listaa";
+        kommentti.setPelinId(peliId);
+        Peli peli = peliService.findPeli(peliId); //tää ei jostain syystä mene vielä. must check
+        peli.getKommentit().add(kommentti);
+        return "redirect:/listaa";
     }
 
     @RequestMapping(value = "/lisaa")

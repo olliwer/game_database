@@ -10,18 +10,17 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-    </head>
+    </head><!-- 
     <body>
     <c:forEach var="peli" items="${games}">
         <li>${peli.id}, Peli: ${peli.nimi}</li>
         <a href=<%=request.getContextPath()%>/lisaa>Takaisin</a>
     </c:forEach>
 </body>
-<head>
-<form action="<%=request.getContextPath()%>/lisaaKommentti" method="POST">
-    <span>Fields: <textarea name="fields" cols="40" rows="5"></textarea>
-    </span><br>
-    <input type="submit">
-</form>
-</head>
+    -->
+    <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
+        <span>Fields: <textarea name="fields" cols="40" rows="5"></textarea>
+        </span><br>
+        <input type="submit">
+    </form>
 </html>
