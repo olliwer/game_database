@@ -28,7 +28,7 @@ public class PeliController {
 
     @RequestMapping(value = "*")
     public String kuuntele(){
-        return "redirect:/lisaa";
+        return "redirect:/home";
     }
     
     @RequestMapping(value = "lisaaPeli",method = RequestMethod.POST)
@@ -64,10 +64,13 @@ public class PeliController {
         return "listaa";
     }
     
- 
-    
     @RequestMapping(value = "/lisaa")
     public String lisaaKuuntelija(){
         return "lisaa";
+    }
+    
+    @RequestMapping(value = "/home")
+    public String home(){
+        return "home";
     }
 }

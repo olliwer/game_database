@@ -30,7 +30,7 @@ public class Kommentti implements Serializable {
         return id;
     }
 
-    public String getViesti() {
+    public String getFields() {
         return fields;
     }
 
@@ -38,7 +38,7 @@ public class Kommentti implements Serializable {
         this.id = id;
     }
 
-    public void setViesti(String viesti) {
+    public void setFields(String viesti) {
         this.fields = viesti;
     }
 }
