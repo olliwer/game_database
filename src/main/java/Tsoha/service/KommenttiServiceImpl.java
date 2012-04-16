@@ -11,8 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class KommenttiServiceImpl implements KommenttiService{
-        
+public class KommenttiServiceImpl implements KommenttiService {
+
     @Autowired
     KommenttiRepository kommenttiRepository;
 
@@ -28,6 +28,6 @@ public class KommenttiServiceImpl implements KommenttiService{
 
     @Override
     public Kommentti add(Kommentti kommentti) {
-        return(kommenttiRepository.save(kommentti));
+        return (kommenttiRepository.save(kommentti));
     }
 }
