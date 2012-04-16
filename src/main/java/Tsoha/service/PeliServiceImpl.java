@@ -36,4 +36,9 @@ public class PeliServiceImpl implements PeliService {
         return(peliRepository.save(peli));
     }
     
+    @Override
+    public Peli findPeli(Integer peliId){
+        return peliRepository.findOne(peliId);
+    }
+    
 }

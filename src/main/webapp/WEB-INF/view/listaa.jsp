@@ -13,11 +13,12 @@
     </head>
     <body>
         <c:forEach var="peli" items="${pelit}">
-                <li>${peli.id}, Peli: ${peli.nimi}</li>
+                <li>Id: ${peli.id}, Peli: ${peli.nimi}</li>
+                <a href="kommentoi/${peli.id}"> Kommentoi</a>
             </c:forEach>
             
             <c:forEach var="genre" items="${genret}">
-                <li>${genre.id}, Genre: ${genre.nimi}</li>
+                <li>Id: ${genre.id}, Genre: ${genre.nimi}</li>
             </c:forEach>
             
             <a href="lisaa">Lisää peli tai genre</a>

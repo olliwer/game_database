@@ -22,9 +22,20 @@ public class Peli implements Serializable {
     
     @ManyToOne(cascade = {CascadeType.ALL})
     private Genre genre;
+    
+    @ManyToMany(cascade = {CascadeType.ALL})
+    private List<Kommentti> kommentit;
 
     public Integer getId() {
         return id;
+    }
+
+    public List<Kommentti> getKommentit() {
+        return kommentit;
+    }
+
+    public void setKommentit(List<Kommentti> kommentit) {
+        this.kommentit = kommentit;
     }
 
     public void setId(Integer peliId) {

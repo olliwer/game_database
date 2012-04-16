@@ -24,7 +24,7 @@ public class PeliController {
 
     @RequestMapping(value = "*")
     public String kuuntele(){
-        return "lisaa";
+        return "/lisaa";
     }
     
     @RequestMapping(value = "lisaaPeli",method = RequestMethod.POST)
@@ -34,17 +34,22 @@ public class PeliController {
     }
     
      @RequestMapping(value = "lisaaGenre",method = RequestMethod.POST)
-    public String lisaa(@ModelAttribute Genre genre){
+    public String lisaaGenre(@ModelAttribute Genre genre){
         genre = genreService.add(genre);
         return "redirect:/listaa";
     }
 
-
     @RequestMapping(value = "listaa")
-    public String listaaPeli(Model model){
+    public String listaaPelitJaGenret(Model model){
         model.addAttribute("pelit", peliService.listAll());
         model.addAttribute("genret", genreService.listAll());
         return "listaa";
+    }
+    
+    @RequestMapping(value = "kommentoi/{peliId}")
+    public String kommentoiPelia(@PathVariable Integer peliId, Model model){
+        model.addAttribute("games", peliService.findPeli(peliId));
+        return "kommentoi";  
     }
     
  
