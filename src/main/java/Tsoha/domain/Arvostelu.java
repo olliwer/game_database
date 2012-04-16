@@ -52,4 +52,13 @@ public class Arvostelu implements Serializable {
     public void setViesti(String viesti) {
         this.fields = viesti;
     }
+
+    public String getFields() {
+        return fields;
+    }
+
+    public void setFields(String fields) {
+        this.fields = fields;
+    }
+
 }
