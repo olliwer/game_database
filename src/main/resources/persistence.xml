@@ -4,6 +4,7 @@
     <class>Tsoha.domain.Kommentti</class>
     <class>Tsoha.domain.Genre</class>
     <class>Tsoha.domain.Peli</class>
+    <class>Tsoha.domain.Arvostelu</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="showSql" value="true"/>
