@@ -23,15 +23,15 @@ public class Kommentti implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
-    @Column(name = "Viesti")
-    private String viesti;
+    @Column(name = "Fields")
+    private String fields;
 
     public Integer getId() {
         return id;
     }
 
     public String getViesti() {
-        return viesti;
+        return fields;
     }
 
     public void setId(Integer id) {
@@ -39,6 +39,6 @@ public class Kommentti implements Serializable {
     }
 
     public void setViesti(String viesti) {
-        this.viesti = viesti;
+        this.fields = viesti;
     }
 }

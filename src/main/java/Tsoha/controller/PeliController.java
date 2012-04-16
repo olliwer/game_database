@@ -6,7 +6,9 @@ package Tsoha.controller;
 
 import Tsoha.domain.Peli;
 import Tsoha.domain.Genre;
+import Tsoha.domain.Kommentti;
 import Tsoha.service.GenreService;
+import Tsoha.service.KommenttiService;
 import Tsoha.service.PeliService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,13 +20,15 @@ public class PeliController {
 
     @Autowired
     private PeliService peliService;
-    
     @Autowired
     private GenreService genreService;
+    @Autowired
+    private KommenttiService kommenttiService;
+    
 
     @RequestMapping(value = "*")
     public String kuuntele(){
-        return "/lisaa";
+        return "redirect:/lisaa";
     }
     
     @RequestMapping(value = "lisaaPeli",method = RequestMethod.POST)
@@ -48,8 +52,16 @@ public class PeliController {
     
     @RequestMapping(value = "kommentoi/{peliId}")
     public String kommentoiPelia(@PathVariable Integer peliId, Model model){
+        System.out.println(peliService.findPeli(peliId).getNimi());
         model.addAttribute("games", peliService.findPeli(peliId));
         return "kommentoi";  
+    }
+    
+    @RequestMapping(value = "lisaaKommentti")
+    public String lisaaKommentti(@ModelAttribute Kommentti kommentti){
+        kommenttiService.add(kommentti);
+        //model..
+        return "listaa";
     }
     
  
