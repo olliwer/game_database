@@ -23,7 +23,7 @@ public class PeliServiceImpl implements PeliService {
 
     @Override
     public void remove(Peli peli) {
-        peliRepository.delete(peli);
+        peliRepository.delete(peli);        
     }
 
     @Override
@@ -34,6 +34,11 @@ public class PeliServiceImpl implements PeliService {
     @Override
     public Peli add(Peli peli) {
         return(peliRepository.save(peli));
+    }
+    
+    @Override
+    public Peli findPeli(Integer peliId){
+        return peliRepository.findOne(peliId);
     }
     
 }

@@ -16,7 +16,7 @@ import javax.validation.constraints.Size;
  * @author Dragondejavu
  */
 @Entity
-public class Kommentti implements Serializable {
+public class Arvostelu implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
@@ -26,11 +26,32 @@ public class Kommentti implements Serializable {
     @Column(name = "Fields")
     private String fields;
     
-    @OneToOne(cascade = {CascadeType.ALL})
-    private Peli peli;
+    @Column(name = "Rating")
+    private String rating;
     
-    @Column(name = "PelinId")
-    private Integer pelinId;
+    public Integer getId() {
+        return id;
+    }
+
+    public String getViesti() {
+        return fields;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setRating(String rating) {
+        this.rating = rating;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public void setViesti(String viesti) {
+        this.fields = viesti;
+    }
 
     public String getFields() {
         return fields;
@@ -40,31 +61,4 @@ public class Kommentti implements Serializable {
         this.fields = fields;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Peli getPeli() {
-        return peli;
-    }
-
-    public void setPeli(Peli peli) {
-        this.peli = peli;
-    }
-
-    public Integer getPelinId() {
-        return pelinId;
-    }
-
-    public void setPelinId(Integer pelinId) {
-        this.pelinId = pelinId;
-    }
-
-  
-    
-    
 }

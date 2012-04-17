@@ -15,4 +15,5 @@ public interface PeliService {
     public void remove(Peli peli);
     public List<Peli> listAll();
     public Peli add(Peli peli);
+    public Peli findPeli(Integer peliId);
 }

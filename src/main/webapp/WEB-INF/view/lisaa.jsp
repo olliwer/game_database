@@ -14,9 +14,15 @@
             <span>Pelin nimi: <input type="text" name="nimi" ></span><br>
             <input type="submit">
         </form>
-        
+
         <form action="lisaaGenre" method="POST">
             <span>Genren nimi: <input type="text" name="nimi" ></span><br>
+            <input type="submit">
+        </form>
+
+        <form action="lisaaArvostelu" method="POST">
+            <span>Arvosana: <input type="text" name="ratings" ></span><br>
+            <span>Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></span><br>
             <input type="submit">
         </form>
     </body>
