@@ -68,11 +68,10 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
-    public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {
-        kommenttiService.add(kommentti);
-        kommentti.setPelinId(peliId);
-        Peli peli = peliService.findPeli(peliId); //tää ei jostain syystä mene vielä. must check
-        peli.getKommentit().add(kommentti);
+    public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {   
+        kommentti.setPelinId(peliId); //pitäisi saada peliksi mutta kusee..
+        kommenttiService.add(kommentti);   
+        peliService.findPeli(peliId).getKommentit().add(kommentti); 
         return "redirect:/listaa";
     }
 

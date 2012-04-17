@@ -13,7 +13,7 @@
     </head>
     <body>
         <c:forEach var="peli" items="${pelit}">
-        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Kommentit: ${peli.kommentit[0].fields}</li>
+        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Kommentit: ${peli.kommentit[0].fields}</li> <!-- for-each tolle fieldsille!! -->
         <a href="kommentoi/${peli.id}"> Kommentoi</a>
     </c:forEach>
 

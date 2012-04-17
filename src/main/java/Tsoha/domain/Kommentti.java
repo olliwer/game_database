@@ -23,10 +23,11 @@ public class Kommentti implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
+    @NotNull(message = "Ethän sie voi jättää kenttää tyhjäks!")
     @Column(name = "Fields")
     private String fields;
     
-    @OneToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.ALL})
     private Peli peli;
     
     @Column(name = "PelinId")

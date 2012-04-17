@@ -9,12 +9,13 @@ import Tsoha.repository.PeliRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *
  * @author Noemj
  */
-
+@Transactional
 @Service
 public class PeliServiceImpl implements PeliService {
     
@@ -40,5 +41,6 @@ public class PeliServiceImpl implements PeliService {
     public Peli findPeli(Integer peliId){
         return peliRepository.findOne(peliId);
     }
+    
     
 }

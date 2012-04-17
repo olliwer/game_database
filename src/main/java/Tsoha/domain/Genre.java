@@ -5,6 +5,7 @@ package Tsoha.domain;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Genre implements Serializable {
@@ -14,6 +15,7 @@ public class Genre implements Serializable {
     @Column(name="ID")
     private Integer id;
     
+    @NotNull(message = "Hullu! Mitä sie teet??")
     @Column
     private String nimi;
     
