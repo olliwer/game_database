@@ -69,8 +69,13 @@ public class PeliController {
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
     public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {   
-        kommentti.setPelinId(peliId); //pitäisi saada peliksi mutta kusee..
-        kommenttiService.add(kommentti);   
+        
+        kommenttiService.add(kommentti); 
+        Integer id = kommentti.getId();
+        Kommentti comment = kommenttiService.findKommentti(id);
+        comment.setPeli(peliService.findPeli(peliId));
+        //kommentti.setPeli(peliService.findPeli(peliId)); //pitäisi saada peliksi mutta kusee..
+          
         peliService.findPeli(peliId).getKommentit().add(kommentti); 
         return "redirect:/listaa";
     }

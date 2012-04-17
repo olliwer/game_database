@@ -32,4 +32,9 @@ public class KommenttiServiceImpl implements KommenttiService {
     public Kommentti add(Kommentti kommentti) {
         return (kommenttiRepository.save(kommentti));
     }
+    
+    @Override
+    public Kommentti findKommentti(Integer id){
+        return (kommenttiRepository.findOne(id));
+    }
 }

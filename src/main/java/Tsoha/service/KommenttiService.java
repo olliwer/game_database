@@ -12,4 +12,5 @@ public interface KommenttiService {
     public void remove(Kommentti kommentti);
     public List<Kommentti> listAll();
     public Kommentti add(Kommentti kommentti);
+    public Kommentti findKommentti(Integer id);
 }
