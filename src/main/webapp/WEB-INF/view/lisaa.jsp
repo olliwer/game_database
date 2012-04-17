@@ -10,6 +10,7 @@
     </head>
     <body>
         <form action="lisaaPeli" method="POST">
+            
             <span>Pelin nimi: <input type="text" name="nimi" ></span><br>
             <input type="submit">
         </form>
