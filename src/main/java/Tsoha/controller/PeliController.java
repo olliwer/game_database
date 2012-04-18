@@ -74,9 +74,12 @@ public class PeliController {
         Integer id = kommentti.getId();
         Kommentti comment = kommenttiService.findKommentti(id);
         comment.setPeli(peliService.findPeli(peliId));
+        comment = kommenttiService.add(comment);
         //kommentti.setPeli(peliService.findPeli(peliId)); //pitäisi saada peliksi mutta kusee..
-          
-        peliService.findPeli(peliId).getKommentit().add(kommentti); 
+        Peli peli = peliService.findPeli(peliId);
+        peli.getKommentit().add(kommentti);
+        peliService.add(peli);
+       // peliService.findPeli(peliId).getKommentit().add(kommentti); 
         return "redirect:/listaa";
     }
 

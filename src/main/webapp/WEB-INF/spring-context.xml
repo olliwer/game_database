@@ -36,34 +36,35 @@
         
         <!-- database -->
     <jdbc:embedded-database id="dataSource" type="HSQL"/>
+
     
         <!-- tietomurha -->
-    <security:global-method-security pre-post-annotations="enabled"/>
+<security:global-method-security pre-post-annotations="enabled"/>
     
 
-    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="persistenceXmlLocation" value="classpath:persistence.xml" />
-        <property name="persistenceUnitName" value="persistence" />  
-        <property name="dataSource" ref="dataSource"/>
-        <property name="jpaVendorAdapter">
-            <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter" />
-        </property>
-        <property name="loadTimeWeaver"> 
-            <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> 
-        </property>
-    </bean>
+<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+    <property name="persistenceXmlLocation" value="classpath:persistence.xml" />
+    <property name="persistenceUnitName" value="persistence" />  
+    <property name="dataSource" ref="dataSource"/>
+    <property name="jpaVendorAdapter">
+        <bean class="org.springframework.orm.jpa.vendor.EclipseLinkJpaVendorAdapter" />
+    </property>
+    <property name="loadTimeWeaver"> 
+        <bean class="org.springframework.instrument.classloading.InstrumentationLoadTimeWeaver" /> 
+    </property>
+</bean>
         
         <!-- Hallinnoidaan transaktioita automaattisesti -->
-    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-        <property name="entityManagerFactory" ref="entityManagerFactory"/>
-    </bean>
+<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+    <property name="entityManagerFactory" ref="entityManagerFactory"/>
+</bean>
     
-    <tx:annotation-driven transaction-manager="transactionManager" />
+<tx:annotation-driven transaction-manager="transactionManager" />
         
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
-    <bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/view/" />
-        <property name="suffix" value=".jsp" />
-    </bean>
+<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+<bean class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor"/>
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <property name="prefix" value="/WEB-INF/view/" />
+    <property name="suffix" value=".jsp" />
+</bean>
 </beans>

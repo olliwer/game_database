@@ -8,6 +8,9 @@
         http://www.springframework.org/schema/security 
             http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
+
+<beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+
     <!-- osoitteiden rajoitus -->
     <http use-expressions="true">
         <intercept-url pattern="/lisaa/**" access="hasRole('user')" />

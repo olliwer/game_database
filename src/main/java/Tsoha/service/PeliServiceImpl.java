@@ -4,6 +4,7 @@
  */
 package Tsoha.service;
 
+import Tsoha.domain.Kommentti;
 import Tsoha.domain.Peli;
 import Tsoha.repository.PeliRepository;
 import java.util.List;
@@ -40,6 +41,13 @@ public class PeliServiceImpl implements PeliService {
     @Override
     public Peli findPeli(Integer peliId){
         return peliRepository.findOne(peliId);
+    }
+    
+    @Override
+    public void lisaaKommentti(Integer peliId, Kommentti kommentti){
+        Peli peli = peliRepository.findOne(peliId);
+        peli.getKommentit().add(kommentti);
+        peliRepository.save(peli);
     }
     
     

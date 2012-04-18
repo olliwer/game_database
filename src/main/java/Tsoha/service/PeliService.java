@@ -5,6 +5,7 @@
 package Tsoha.service;
 
 import Tsoha.domain.Peli;
+import Tsoha.domain.Kommentti;
 import java.util.List;
 
 /**
@@ -16,4 +17,5 @@ public interface PeliService {
     public List<Peli> listAll();
     public Peli add(Peli peli);
     public Peli findPeli(Integer peliId);
+    public void lisaaKommentti(Integer peliId, Kommentti kommentti);
 }
