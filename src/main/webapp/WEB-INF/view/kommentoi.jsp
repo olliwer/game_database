@@ -9,15 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head><!-- 
-    <body>
-    <c:forEach var="peli" items="${games}">
-        <li>${peli.id}, Peli: ${peli.nimi}</li>
-        <a href=<%=request.getContextPath()%>/lisaa>Takaisin</a>
-    </c:forEach>
-</body>
-    -->
+        <title>Kommentoi</title>
+    </head>
     <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
         <span>Fields: <textarea name="fields" cols="40" rows="5"></textarea>
         </span><br>

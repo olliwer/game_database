@@ -5,14 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
-    <head>
+    <head><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Pelitietokanta</title>
     </head>
     <body>
-        <h1>Tervetuloa OP pelitietokantaan!</h1>
-        <a href="lisaa">Lisää peli tai genre</a>
+        <h1>Tervetuloa pelitietokantaan!</h1>
+        <a href="lisaa">Lisää peli</a>
     </body>
 </html>

@@ -67,4 +67,9 @@
     <property name="prefix" value="/WEB-INF/view/" />
     <property name="suffix" value=".jsp" />
 </bean>
+
+
+<!-- Handles HTTP GET requests for /static/** by efficiently serving up static resources in the 
+    ${webappRoot}/static directory -->
+    <mvc:resources mapping="/static/**" location="/static/css/"/>
 </beans>
