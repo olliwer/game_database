@@ -8,7 +8,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html>
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="<c:out value="${pageContext.servletContext.contextPath}" />/styles.css"/>
@@ -19,4 +19,4 @@
         <h1>Tervetuloa pelitietokantaan!</h1>
         <a href="lisaa">Lisää peli</a>
     </body>
-</html>
+
