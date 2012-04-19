@@ -29,7 +29,7 @@ public class PeliController {
     @Autowired
     private ArvosteluService arvosteluService;
 
-    @RequestMapping(value = "*")
+    @RequestMapping(value = "/")
     public String kuuntele() {
         return "redirect:/home";
     }
