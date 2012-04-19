@@ -6,10 +6,15 @@ package Tsoha.service;
  */
 import Tsoha.domain.Arvostelu;
 import java.util.List;
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 public interface ArvosteluService {
-  
-    public void remove(Arvostelu arvostelu);
+
+    @PreAuthorize("hasRole('master')")
+    public void remove(Arvostelu arvostelu) throws DataAccessException;
+
     public List<Arvostelu> listAll();
+
     public Arvostelu add(Arvostelu arvostelu);
 }

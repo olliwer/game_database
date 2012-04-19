@@ -6,10 +6,15 @@ package Tsoha.service;
 
 import Tsoha.domain.Genre;
 import java.util.List;
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 public interface GenreService {
-    
-    public void remove(Genre genre);
+
+    @PreAuthorize("hasRole('master')")
+    public void remove(Genre genre) throws DataAccessException;
+
     public List<Genre> listAll();
+
     public Genre add(Genre genre);
 }

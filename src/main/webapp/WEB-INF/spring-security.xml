@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans:beans xmlns="http://www.springframework.org/schema/security"
              xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:security="http://www.springframework.org/schema/security"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
              xsi:schemaLocation="
         http://www.springframework.org/schema/beans 
@@ -9,28 +10,31 @@
             http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 
-<beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+    <beans:bean id="authenticationEntryPoint" class="org.springframework.security.web.authentication.Http403ForbiddenEntryPoint" />
+
+    <security:global-method-security pre-post-annotations="enabled"/>
 
     <!-- osoitteiden rajoitus -->
     <http use-expressions="true">
-        <intercept-url pattern="/lisaa/**" access="hasRole('user')" />
-        <intercept-url pattern="/lisaa" access="hasRole('user')" />
+        <intercept-url pattern="/lisaa/**" access="hasRole('user') or hasRole('master') or hasRole('viewer')" />
+        <intercept-url pattern="/lisaa" access="hasRole('user') or hasRole('master') or hasRole('viewer')" />
+        <intercept-url pattern="/static/**" access="permitAll" />
         <intercept-url pattern="/**" access="permitAll" />
-
-        
         <!-- näytä kirjautumislomake tarvittaessa -->
-        <form-login />
+        <form-login /> <!-- omalle sivulle <form-login login-page='/login.jsp'/>-->
         <!-- mahdollisuus logouttiin, ohjaus logoutin jälkeen osoitteeseen /home -->
-        <logout logout-success-url="/home" />
+        <logout />
     </http>
-    
+
     <!-- dummyt -->
     <authentication-manager>
         <authentication-provider>
             <user-service>
-                <user name="esa" password="vesa" authorities="user" />
+                <user name="esa" password="vesa" authorities="master" />
                 <user name="test" password="test" authorities="user" />
                 <user name="tester" password="tester" authorities="user" />
+                <user name="foo" password="foo" authorities="viewer" />
+                <user name="viewer" password="viewer" authorities="viewer" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

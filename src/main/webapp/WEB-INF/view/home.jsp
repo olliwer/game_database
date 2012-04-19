@@ -8,7 +8,7 @@
 
 <!DOCTYPE html>
 <html>
-    <head><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/css/styles.css" />
+    <head><link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/static/styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Pelitietokanta</title>
     </head>

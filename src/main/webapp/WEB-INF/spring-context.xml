@@ -27,11 +27,11 @@
            http://www.springframework.org/schema/security/spring-security-3.1.xsd">
                
                
-    <jpa:repositories base-package="Tsoha.repository" />            
+    <jpa:repositories base-package="Tsoha.repository" />    
+    
     <context:component-scan base-package="Tsoha" />
         
-    <mvc:annotation-driven /> 
-        
+     
     <context:annotation-config />
         
         <!-- database -->
@@ -70,6 +70,9 @@
 
 
 <!-- Handles HTTP GET requests for /static/** by efficiently serving up static resources in the 
+
     ${webappRoot}/static directory -->
-    <mvc:resources mapping="/static/**" location="/static/css/"/>
+    <mvc:annotation-driven /> 
+    <mvc:resources mapping="/static/**" location="/static/"/>
+
 </beans>

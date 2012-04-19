@@ -7,15 +7,26 @@ package Tsoha.service;
 import Tsoha.domain.Peli;
 import Tsoha.domain.Kommentti;
 import java.util.List;
+import org.springframework.dao.DataAccessException;
+import org.springframework.security.access.prepost.PreAuthorize;
 
 /**
  *
  * @author Noemj
  */
 public interface PeliService {
-    public void remove(Peli peli);
+
+    @PreAuthorize("hasRole('master')")
+    public void remove(Peli peli) throws DataAccessException;
+
     public List<Peli> listAll();
-    public Peli add(Peli peli);
-    public Peli findPeli(Integer peliId);
-    public void lisaaKommentti(Integer peliId, Kommentti kommentti);
+
+    @PreAuthorize("hasRole('user') or hasRole('master')")
+    public Peli add(Peli peli) throws DataAccessException;
+
+    @PreAuthorize("hasRole('user') or hasRole('master')")
+    public Peli findPeli(Integer peliId) throws DataAccessException;
+
+    @PreAuthorize("hasRole('user') or hasRole('master')")
+    public void lisaaKommentti(Integer peliId, Kommentti kommentti) throws DataAccessException;
 }
