@@ -31,7 +31,11 @@
     
     <context:component-scan base-package="Tsoha" />
         
-     
+        
+    <mvc:annotation-driven /> 
+    
+    <mvc:resources mapping="/css/**" location="WEB-INF/css/*" />
+    
     <context:annotation-config />
         
         <!-- database -->
@@ -72,7 +76,6 @@
 <!-- Handles HTTP GET requests for /static/** by efficiently serving up static resources in the 
 
     ${webappRoot}/static directory -->
-    <mvc:annotation-driven /> 
-    <mvc:resources mapping="/static/**" location="/static/"/>
+    
 
 </beans>
