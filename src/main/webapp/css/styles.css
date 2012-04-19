@@ -1,14 +1,27 @@
 body
 {
-background-image:url(http://blog.mobile9.com/wp-content/uploads/2010/09/htc-desire-wallpapers-gaming.jpg);
+    
+    background-image:url(http://www.bitewallpapers.com/games/game%20wallpaper/space%20invaders/part%203/Space_invaders_wallpaper_classic-game.jpg);
+    font-family: fantasy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
 }
 h1
 {
-color:white;
-text-align:center;
+    color:black;
+    text-align:center;
+
+    font-style: normal;
+    font-weight: bold;
+    font-variant: normal;
+    font-family: fantasy;
+    font-size: 60px;
 }
 p
 {
-font-family:"Times New Roman";
-font-size:20px;
+    font-family:"Times New Roman";
+    font-size:36px;
 }
