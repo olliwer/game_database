@@ -5,32 +5,33 @@
     "http://www.w3.org/TR/html4/loose.dtd">
 
 <html>
-    <head><link rel="stylesheet" type="text/css" href="<c:url value ="/static/styles.css"/>" />
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <head><link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  
         <title>JSP Page</title>
     </head>
     <body>
         <table class="footer">
             <tr>              
-                <td><a href="<spring:url value="/j_spring_security_logout" htmlEscape="true" />">Logout</a></td>
+                <td><a href="">Logout</a></td>
             </tr>
         </table>
+        <div id="container">
+            <form action="lisaaPeli" method="POST">
 
-        <form action="lisaaPeli" method="POST">
+                <span style="margin-top:15px;">Pelin nimi: <input type="text" name="nimi"></span> 
+                <input type="submit">
+            </form>
 
-            <span>Pelin nimi: <input type="text" name="nimi" ></span><br>
-            <input type="submit">
-        </form>
+            <form action="lisaaGenre" method="POST">
+                <span style="margin-top:15px;">Genren nimi: <input type="text" name="nimi" ></span> 
+                <input type="submit">
+            </form>
 
-        <form action="lisaaGenre" method="POST">
-            <span>Genren nimi: <input type="text" name="nimi" ></span><br>
-            <input type="submit">
-        </form>
-
-        <form action="lisaaArvostelu" method="POST">
-            <span>Arvosana: <input type="text" name="ratings" ></span><br>
-            <span>Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></span><br>
-            <input type="submit">
-        </form>
+            <form action="lisaaArvostelu" method="POST">
+                <span style="margin-top:15px;">Arvosana: <input type="text" name="ratings" ></span><br />
+                <span style="margin-top:15px;">Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></span> <br />
+                <input type="submit" style="margin-left:30%;" />
+            </form>
+        </div>
     </body>
 </html>

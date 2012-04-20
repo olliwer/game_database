@@ -21,6 +21,30 @@ h1
     font-family: fantasy;
     font-size: 60px;
 }
+
+#container {
+	text-align:left;
+	width:500px;
+	margin: 0 auto;
+}
+
+a {
+    background:#000000;
+    color:#ffffff;
+    padding:5px;
+    text-decoration:none;
+}
+a:active {
+    backround:#000000;
+    color:#ccc;
+    padding:5px;
+}
+
+input{
+	margin:0;
+	text-align:right;
+}
+
 p
 {
     font-family:"Times New Roman";
