@@ -26,6 +26,7 @@
         <a href="kommentoi/${peli.id}"> Kommentoi</a></br>
         <a href="lisaaGenreen/${peli.id}"> Liitä peli genreen</a></br>
         <a href="arvostele/${peli.id}"> Arvostele peli</a></br>
+        <a href="poista/${peli.id}"> Poista peli</a></br>
     </c:forEach>
 
     <c:forEach var="genre" items="${genret}">

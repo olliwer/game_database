@@ -61,6 +61,13 @@ public class PeliController {
         return "kommentoi";
     }
     
+    @RequestMapping(value = "poista/{peliId}")
+    public String poistaPeli(@PathVariable Integer peliId) {
+        Peli peli = peliService.findPeli(peliId);
+        peliService.remove(peli);
+        return "redirect:/listaa";
+    }
+    
     @RequestMapping(value = "lisaaGenreen/{peliId}")
     public String liitaGenreen(@PathVariable Integer peliId, Model model) {
         model.addAttribute("peli", peliService.findPeli(peliId));
