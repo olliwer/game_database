@@ -14,7 +14,8 @@
     </head>
     <body>
         <c:forEach var="peli" items="${pelit}">
-        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Genre: ${peli.genre.nimi}, Kommentit: </br>
+        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Genre: ${peli.genre.nimi}</br>
+            Kommentit: </br>
             <c:forEach var="kommentti" items="${peli.kommentit}" varStatus="status">
                 ${kommentti.fields} <c:if test="${not status.last}">,</c:if> </br>
         </c:forEach></li>
