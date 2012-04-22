@@ -66,20 +66,35 @@ public class PeliController {
         model.addAttribute("peli", peliService.findPeli(peliId));
         return "kommentoi";
     }
+    
+    @RequestMapping(value = "lisaaGenreen/{peliId}")
+    public String liitaGenreen(@PathVariable Integer peliId, Model model) {
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        model.addAttribute("genres", genreService.listAll());
+        return "liitaGenreen";
+    }
+    
+    @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}")
+    public String liitaPeliGenreen(@PathVariable Integer peliId, @PathVariable Integer genreId){
+        Peli peli = peliService.findPeli(peliId);
+        Genre genre = genreService.findGenre(genreId);
+        peli.setGenre(genre);
+        genre.getPelit().add(peli);
+        peliService.add(peli);
+        genreService.add(genre);
+        return "redirect:/listaa";
+    }
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
-    public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {   
-        
+    public String lisaaKommentti(@ModelAttribute Kommentti kommentti, @PathVariable Integer peliId) {          
         kommenttiService.add(kommentti); 
         Integer id = kommentti.getId();
         Kommentti comment = kommenttiService.findKommentti(id);
         comment.setPeli(peliService.findPeli(peliId));
         comment = kommenttiService.add(comment);
-        //kommentti.setPeli(peliService.findPeli(peliId)); //pitäisi saada peliksi mutta kusee..
         Peli peli = peliService.findPeli(peliId);
         peli.getKommentit().add(kommentti);
-        peliService.add(peli);
-       // peliService.findPeli(peliId).getKommentit().add(kommentti); 
+        peliService.add(peli); 
         return "redirect:/listaa";
     }
 

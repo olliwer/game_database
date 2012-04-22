@@ -14,15 +14,19 @@
     </head>
     <body>
         <c:forEach var="peli" items="${pelit}">
-        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Kommentit: </br>
+        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Genre: ${peli.genre.nimi}, Kommentit: </br>
             <c:forEach var="kommentti" items="${peli.kommentit}" varStatus="status">
                 ${kommentti.fields} <c:if test="${not status.last}">,</c:if> </br>
         </c:forEach></li> <!-- for-each tolle fieldsille!! -->
-        <a href="kommentoi/${peli.id}"> Kommentoi</a>
+        <a href="kommentoi/${peli.id}"> Kommentoi</a></br>
+        <a href="lisaaGenreen/${peli.id}"> Liitä peli genreen</a></br>
     </c:forEach>
 
     <c:forEach var="genre" items="${genret}">
-        <li>Id: ${genre.id}, Genre: ${genre.nimi}</li>
+        <li>Id: ${genre.id}, Genre: ${genre.nimi}, Pelit: </br>
+            <c:forEach var="peli" items="${genre.pelit}" varStatus="status">
+                ${peli.nimi} <c:if test="${not status.last}">,</c:if> </br>
+            </c:forEach>
     </c:forEach>
 
     <c:forEach var="arvostelu" items="${arvostelut}">

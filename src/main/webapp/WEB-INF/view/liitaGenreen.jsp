@@ -1,0 +1,22 @@
+<%-- 
+    Document   : liitaGenreen
+    Created on : Apr 22, 2012, 12:40:03 PM
+    Author     : Noemj
+--%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <c:forEach var="genre" items="${genres}">
+            <form action="<%=request.getContextPath()%>/lisaaPeliGenreen/${peli.id}/${genre.id}" method="POST">
+                <li>Id: ${genre.id}, Genre: ${genre.nimi}, Lisää tähän genreen: </li>               
+                <input type="submit">
+            </form>
+        </c:forEach>
+</body>
+</html>

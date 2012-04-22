@@ -36,5 +36,8 @@ public class GenreServiceImpl implements GenreService{
         return(genreRepository.save(genre));
     }
     
+    public Genre findGenre(Integer genreId) {
+        return (genreRepository.findOne(genreId));
+    }
     
 }

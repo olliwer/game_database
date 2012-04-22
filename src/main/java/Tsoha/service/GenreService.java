@@ -17,4 +17,6 @@ public interface GenreService {
     public List<Genre> listAll();
 
     public Genre add(Genre genre);
+    
+    public Genre findGenre(Integer genreId);
 }
