@@ -36,10 +36,6 @@
             </c:forEach>
     </c:forEach>
 
-    <c:forEach var="arvostelu" items="${arvostelut}">
-        <li>Id: ${arvostelu.id}, Arvostelu on: ${arvostelu.fields}</li>
-    </c:forEach>
-
     <a href="lisaa">Lis‰‰ peli tai genre tai arvostelu</a>
 </body>
 </html>
