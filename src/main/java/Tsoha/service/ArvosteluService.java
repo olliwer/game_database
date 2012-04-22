@@ -17,4 +17,6 @@ public interface ArvosteluService {
     public List<Arvostelu> listAll();
 
     public Arvostelu add(Arvostelu arvostelu);
+
+    public Arvostelu findArvostelu(Integer arvosteluId);
 }

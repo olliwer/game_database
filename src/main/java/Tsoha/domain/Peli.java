@@ -25,7 +25,18 @@ public class Peli implements Serializable {
     
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Kommentti> kommentit;
+    
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Arvostelu> arvostelut;
 
+    public List<Arvostelu> getArvostelut() {
+        return arvostelut;
+    }
+
+    public void setArvostelut(List<Arvostelu> arvostelut) {
+        this.arvostelut = arvostelut;
+    }
+    
     public Integer getId() {
         return id;
     }

@@ -36,6 +36,7 @@ public class GenreServiceImpl implements GenreService{
         return(genreRepository.save(genre));
     }
     
+    @Override
     public Genre findGenre(Integer genreId) {
         return (genreRepository.findOne(genreId));
     }

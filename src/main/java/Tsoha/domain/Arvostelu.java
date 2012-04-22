@@ -29,6 +29,17 @@ public class Arvostelu implements Serializable {
     @Column(name = "Rating")
     private String rating;
     
+    @ManyToOne(cascade = {CascadeType.ALL})
+    private Peli peli;
+
+    public Peli getPeli() {
+        return peli;
+    }
+
+    public void setPeli(Peli peli) {
+        this.peli = peli;
+    }
+    
     public Integer getId() {
         return id;
     }

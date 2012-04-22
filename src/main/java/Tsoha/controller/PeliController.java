@@ -46,12 +46,7 @@ public class PeliController {
         return "redirect:/listaa";
     }
 
-    @RequestMapping(value = "lisaaArvostelu", method = RequestMethod.POST)
-    public String lisaaArvostelu(@ModelAttribute Arvostelu arvostelu) {
-        arvostelu = arvosteluService.add(arvostelu);
-        return "redirect:/listaa";
-    }
-
+    
     @RequestMapping(value = "listaa")
     public String listaaPelitJaGenretJaArvostelut(Model model) {
         model.addAttribute("pelit", peliService.listAll());
@@ -61,8 +56,7 @@ public class PeliController {
     }
 
     @RequestMapping(value = "kommentoi/{peliId}")
-    public String kommentoiPelia(@PathVariable Integer peliId, Model model) {
-        System.out.println(peliService.findPeli(peliId).getNimi());     
+    public String kommentoiPelia(@PathVariable Integer peliId, Model model) {     
         model.addAttribute("peli", peliService.findPeli(peliId));
         return "kommentoi";
     }
@@ -73,6 +67,13 @@ public class PeliController {
         model.addAttribute("genres", genreService.listAll());
         return "liitaGenreen";
     }
+    
+    @RequestMapping(value = "arvostele/{peliId}")
+    public String arvostele(@PathVariable Integer peliId, Model model) {
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        return "arvostele";
+    }
+
     
     @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}")
     public String liitaPeliGenreen(@PathVariable Integer peliId, @PathVariable Integer genreId){
@@ -94,6 +95,19 @@ public class PeliController {
         comment = kommenttiService.add(comment);
         Peli peli = peliService.findPeli(peliId);
         peli.getKommentit().add(kommentti);
+        peliService.add(peli); 
+        return "redirect:/listaa";
+    }
+    
+    @RequestMapping(value = "lisaaArvostelu/{peliId}")
+    public String lisaaArvostelu(@ModelAttribute Arvostelu arvostelu, @PathVariable Integer peliId) {          
+        arvosteluService.add(arvostelu); 
+        Integer id = arvostelu.getId();
+        Arvostelu rate = arvosteluService.findArvostelu(id);
+        rate.setPeli(peliService.findPeli(peliId));
+        rate = arvosteluService.add(rate);
+        Peli peli = peliService.findPeli(peliId);
+        peli.getArvostelut().add(rate);
         peliService.add(peli); 
         return "redirect:/listaa";
     }

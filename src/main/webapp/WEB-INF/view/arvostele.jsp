@@ -1,6 +1,6 @@
 <%-- 
-    Document   : kommentoi
-    Created on : Apr 14, 2012, 12:52:52 PM
+    Document   : arvostele
+    Created on : Apr 22, 2012, 1:53:11 PM
     Author     : Noemj
 --%>
 
@@ -11,8 +11,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Game database</title>
     </head>
-    <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
-        <span>Kommentti: <textarea name="fields" cols="40" rows="5"></textarea>
+    <form action="<%=request.getContextPath()%>/lisaaArvostelu/${peli.id}" method="POST">
+        <span>Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></br>
+        <span>Arvosana: <input type="text" name="rating"></span> 
         </span><br>
         <input type="submit">
     </form>

@@ -14,7 +14,7 @@
     <body>
         <c:forEach var="genre" items="${genres}">
             <form action="<%=request.getContextPath()%>/lisaaPeliGenreen/${peli.id}/${genre.id}" method="POST">
-                <li>Id: ${genre.id}, Genre: ${genre.nimi}, Lisää tähän genreen: </li>               
+                <li>Id: ${genre.id}, Genre: ${genre.nimi}, Lisää tähän genreen </li>               
                 <input type="submit">
             </form>
         </c:forEach>

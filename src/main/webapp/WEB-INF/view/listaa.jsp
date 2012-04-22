@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
         <title>Game database</title>
     </head>
@@ -17,9 +17,15 @@
         <li>Id: ${peli.id}, Peli: ${peli.nimi}, Genre: ${peli.genre.nimi}, Kommentit: </br>
             <c:forEach var="kommentti" items="${peli.kommentit}" varStatus="status">
                 ${kommentti.fields} <c:if test="${not status.last}">,</c:if> </br>
-        </c:forEach></li> <!-- for-each tolle fieldsille!! -->
+        </c:forEach></li>
+        Arvostelut: </br>
+        <c:forEach var="arvostelu" items="${peli.arvostelut}" varStatus="status">
+            Arvosana: ${arvostelu.rating}</br>
+                ${arvostelu.fields} <c:if test="${not status.last}">,</c:if> </br>
+        </c:forEach></li>
         <a href="kommentoi/${peli.id}"> Kommentoi</a></br>
         <a href="lisaaGenreen/${peli.id}"> Liitä peli genreen</a></br>
+        <a href="arvostele/${peli.id}"> Arvostele peli</a></br>
     </c:forEach>
 
     <c:forEach var="genre" items="${genret}">

@@ -30,4 +30,8 @@ public class ArvosteluServiceImpl implements ArvosteluService {
     public Arvostelu add(Arvostelu arvostelu) {
         return (arvosteluRepository.save(arvostelu));
     }
+    @Override
+    public Arvostelu findArvostelu(Integer arvosteluId) {
+        return arvosteluRepository.findOne(arvosteluId);
+    }
 }
