@@ -12,7 +12,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
-        <title>Pelitietokanta</title>
+        <title>Game database</title>
     </head>
     <body>
         <h1>Tervetuloa pelitietokantaan!</h1>

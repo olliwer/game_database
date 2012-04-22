@@ -10,7 +10,7 @@
     <head><link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <title>Kommentoi</title>
+        <title>Game database</title>
     </head>
     <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
         <span>Fields: <textarea name="fields" cols="40" rows="5"></textarea>

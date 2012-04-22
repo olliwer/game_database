@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
         <link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
-        <title>JSP Page</title>
+        <title>Game database</title>
     </head>
     <body>
         <c:forEach var="peli" items="${pelit}">
