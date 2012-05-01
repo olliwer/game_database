@@ -67,6 +67,13 @@ public class PeliController {
         peliService.remove(peli);
         return "redirect:/listaa";
     }
+    @RequestMapping(value = "poistaLaina/{peliId}")
+    public String poistaLainasta(@PathVariable Integer peliId) {
+        Peli peli = peliService.findPeli(peliId);
+        peli.setLainassa(null);
+        peliService.add(peli);
+        return "redirect:/listaa";
+    }
     
     @RequestMapping(value = "lisaaGenreen/{peliId}")
     public String liitaGenreen(@PathVariable Integer peliId, Model model) {
@@ -79,6 +86,12 @@ public class PeliController {
     public String arvostele(@PathVariable Integer peliId, Model model) {
         model.addAttribute("peli", peliService.findPeli(peliId));
         return "arvostele";
+    }
+    
+    @RequestMapping(value = "lainaa/{peliId}")
+    public String lainaa(@PathVariable Integer peliId, Model model){
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        return "lainaa";
     }
 
     
@@ -118,6 +131,16 @@ public class PeliController {
         peliService.add(peli); 
         return "redirect:/listaa";
     }
+    
+    @RequestMapping(value = "lainaaPeli/{peliId}")
+    public String lainaaPeli(@PathVariable Integer peliId,@RequestParam String lainassa) {
+        Peli peli = peliService.findPeli(peliId);
+        peli.setLainassa(lainassa);
+        peliService.add(peli);
+        return "redirect:/listaa";
+    }
+    
+    
 
     @RequestMapping(value = "/lisaa")
     public String lisaaKuuntelija() {
@@ -127,5 +150,5 @@ public class PeliController {
     @RequestMapping(value = "/home")
     public String home() {
         return "home";
-    }
+    }  
 }

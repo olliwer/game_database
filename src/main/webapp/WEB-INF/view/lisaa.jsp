@@ -24,13 +24,6 @@
                 <span style="margin-top:15px;">Genren nimi: <input type="text" name="nimi" ></span> 
                 <input type="submit">
             </form>
-<!--
-            <form action="lisaaArvostelu" method="POST">
-                <span style="margin-top:15px;">Arvosana: <input type="text" name="ratings" ></span><br />
-                <span style="margin-top:15px;">Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></span> <br />
-                <input type="submit" style="margin-left:30%;" />
-            </form>
--->
         </div>
     </body>
 </html>

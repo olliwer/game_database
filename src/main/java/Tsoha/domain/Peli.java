@@ -19,6 +19,9 @@ public class Peli implements Serializable {
     @NotNull(message = "Pitäähän pelillä nyt nimi olla..")
     @Column(name = "Name")
     private String nimi;
+        
+    @Column(name = "Lainassa")
+    private String lainassa;
     
     @ManyToOne(cascade = {CascadeType.ALL})
     private Genre genre;
@@ -28,6 +31,14 @@ public class Peli implements Serializable {
     
     @OneToMany(cascade = {CascadeType.ALL})
     private List<Arvostelu> arvostelut;
+
+    public String getLainassa() {
+        return lainassa;
+    }
+
+    public void setLainassa(String lainassa) {
+        this.lainassa = lainassa;
+    }
 
     public List<Arvostelu> getArvostelut() {
         return arvostelut;
