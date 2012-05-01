@@ -93,6 +93,12 @@ public class PeliController {
         model.addAttribute("peli", peliService.findPeli(peliId));
         return "lainaa";
     }
+    
+    @RequestMapping(value = "lainassaHenkilolla")
+    public String lainassa(Model model, @RequestParam String lainassa){
+        model.addAttribute("pelit", peliService.findByLainassa(lainassa));
+        return "lainassa";
+    }
 
     
     @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}")

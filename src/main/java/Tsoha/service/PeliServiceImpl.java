@@ -43,12 +43,10 @@ public class PeliServiceImpl implements PeliService {
     public Peli findPeli(Integer peliId){
         return peliRepository.findOne(peliId);
     }
-    
+
     @Override
-    public void lisaaKommentti(Integer peliId, Kommentti kommentti){
-        Peli peli = peliRepository.findOne(peliId);
-        peli.getKommentit().add(kommentti);
-        peliRepository.save(peli);
+    public List<Peli> findByLainassa(String lainassa) {
+        return peliRepository.findByLainassa(lainassa);
     }
     
     

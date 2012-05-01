@@ -17,5 +17,5 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Transactional
 public interface PeliRepository extends JpaRepository<Peli, Integer> {
-   // List<Peli> findPeli();
+   List<Peli> findByLainassa(String lainassa);
 }

@@ -19,17 +19,18 @@
                 <td><a href="<spring:url value="/j_spring_security_logout" htmlEscape="true" />">Logout</a></td>
             </tr>
         </table>
+            Pelit:
         <c:forEach var="peli" items="${pelit}">
-        <li>Id: ${peli.id}, Peli: ${peli.nimi}, Genre: ${peli.genre.nimi}</br>
-        Kommentit: </br>
+        <li>${peli.nimi}, Genre: ${peli.genre.nimi}</br>
+            Kommentit: </br>
             <c:forEach var="kommentti" items="${peli.kommentit}" varStatus="status">
                 ${kommentti.fields} <c:if test="${not status.last}">,</c:if> </br>
             </c:forEach></li>
         Arvostelut: </br>
-            <c:forEach var="arvostelu" items="${peli.arvostelut}" varStatus="status">
+        <c:forEach var="arvostelu" items="${peli.arvostelut}" varStatus="status">
             Arvosana: ${arvostelu.rating}</br>
             ${arvostelu.fields} <c:if test="${not status.last}">,</c:if> </br>
-            </c:forEach></li>
+        </c:forEach></li>
 
     <c:if test="${!empty peli.lainassa}">
         Lainassa: ${peli.lainassa} </br>
@@ -45,14 +46,23 @@
         <a href="poistaLaina/${peli.id}"> Poista lainasta</a></br>
     </c:if>
 </c:forEach>
-
+        </br>
+Genret:
 <c:forEach var="genre" items="${genret}">
-    <li>Id: ${genre.id}, Genre: ${genre.nimi}, Pelit: </br>
+    <li>Genre: ${genre.nimi}, Pelit: </br>
         <c:forEach var="peli" items="${genre.pelit}" varStatus="status">
             ${peli.nimi} <c:if test="${not status.last}">,</c:if> </br>
         </c:forEach>
     </c:forEach>
+        </br>
 
     <a href="lisaa">Lisää peli tai genre tai arvostelu</a>
+    </br>
+    </br>
+    Etsi pelit jotka lainassa henkilöllä:
+    <form action="<%=request.getContextPath()%>/lainassaHenkilolla/" method="POST">
+        <input type="text" name="lainassa">
+        <input type="submit">
+    </form>
 </body>
 </html>

@@ -27,6 +27,5 @@ public interface PeliService {
     @PreAuthorize("hasRole('user') or hasRole('master')")
     public Peli findPeli(Integer peliId) throws DataAccessException;
 
-    @PreAuthorize("hasRole('user') or hasRole('master')")
-    public void lisaaKommentti(Integer peliId, Kommentti kommentti) throws DataAccessException;
+    public List<Peli> findByLainassa(String lainassa);
 }
