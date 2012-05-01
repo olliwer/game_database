@@ -26,7 +26,7 @@ public class PeliServiceImpl implements PeliService {
 
     @Override
     public void remove(Peli peli) {
-        peliRepository.delete(peli);        
+        peliRepository.delete(peli); 
     }
 
     @Override

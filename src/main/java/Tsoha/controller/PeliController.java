@@ -12,8 +12,10 @@ import Tsoha.service.GenreService;
 import Tsoha.service.KommenttiService;
 import Tsoha.service.PeliService;
 import Tsoha.service.ArvosteluService;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -60,7 +62,7 @@ public class PeliController {
         model.addAttribute("peli", peliService.findPeli(peliId));
         return "kommentoi";
     }
-    
+      
     @RequestMapping(value = "poista/{peliId}")
     public String poistaPeli(@PathVariable Integer peliId) {
         Peli peli = peliService.findPeli(peliId);

@@ -23,7 +23,7 @@ public class Peli implements Serializable {
     @Column(name = "Lainassa")
     private String lainassa;
     
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REMOVE})
     private Genre genre;
     
     @OneToMany(cascade = {CascadeType.ALL})
