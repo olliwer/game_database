@@ -19,7 +19,7 @@ public class Genre implements Serializable {
     @Column
     private String nimi;
     
-    @OneToMany(cascade = {CascadeType.REMOVE})
+    @OneToMany
     private List<Peli> pelit;
 
     public Integer getId() {

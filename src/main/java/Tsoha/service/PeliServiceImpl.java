@@ -20,13 +20,20 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 @Service
 public class PeliServiceImpl implements PeliService {
-    
+
     @Autowired
     PeliRepository peliRepository;
+    
+    @Autowired
+    GenreService genreService;
 
+    @Transactional
     @Override
     public void remove(Peli peli) {
-        peliRepository.delete(peli); 
+        peli.getGenre().getPelit().remove(peli);
+        genreService.add(peli.getGenre());
+        peli.setGenre(null);
+        peliRepository.delete(peli);
     }
 
     @Override
@@ -36,11 +43,11 @@ public class PeliServiceImpl implements PeliService {
 
     @Override
     public Peli add(Peli peli) throws DataAccessException {
-        return(peliRepository.save(peli));
+        return (peliRepository.save(peli));
     }
-    
+
     @Override
-    public Peli findPeli(Integer peliId){
+    public Peli findPeli(Integer peliId) {
         return peliRepository.findOne(peliId);
     }
 
@@ -48,6 +55,4 @@ public class PeliServiceImpl implements PeliService {
     public List<Peli> findByLainassa(String lainassa) {
         return peliRepository.findByLainassa(lainassa);
     }
-    
-    
 }
