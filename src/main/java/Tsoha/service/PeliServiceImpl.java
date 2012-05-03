@@ -30,9 +30,12 @@ public class PeliServiceImpl implements PeliService {
     @Transactional
     @Override
     public void remove(Peli peli) {
+        if (peli.getGenre() != null)
+            if (peli.getGenre().getPelit() != null){
         peli.getGenre().getPelit().remove(peli);
         genreService.add(peli.getGenre());
         peli.setGenre(null);
+        }
         peliRepository.delete(peli);
     }
 
