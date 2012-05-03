@@ -76,7 +76,15 @@ public class PeliController {
         peliService.remove(peli);
         return "redirect:/listaa";
     }
+<<<<<<< HEAD
 
+=======
+    @RequestMapping(value="/404.html")
+    public String error404() {
+        return "error";
+    }
+    
+>>>>>>> a2b3cd8e0d0f0e1df16e406886d02eb6487773b8
     @RequestMapping(value = "poistaLaina/{peliId}")
     public String poistaLainasta(@PathVariable Integer peliId) {
         Peli peli = peliService.findPeli(peliId);
@@ -172,5 +180,15 @@ public class PeliController {
     @RequestMapping(value = "/home")
     public String home() {
         return "home";
+<<<<<<< HEAD
     }
+=======
+    }  
+    
+    @RequestMapping(value = "/error")
+    public String error(){
+        return "error";
+    }
+    
+>>>>>>> a2b3cd8e0d0f0e1df16e406886d02eb6487773b8
 }
