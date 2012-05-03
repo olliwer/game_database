@@ -76,15 +76,12 @@ public class PeliController {
         peliService.remove(peli);
         return "redirect:/listaa";
     }
-<<<<<<< HEAD
 
-=======
     @RequestMapping(value="/404.html")
     public String error404() {
         return "error";
     }
-    
->>>>>>> a2b3cd8e0d0f0e1df16e406886d02eb6487773b8
+
     @RequestMapping(value = "poistaLaina/{peliId}")
     public String poistaLainasta(@PathVariable Integer peliId) {
         Peli peli = peliService.findPeli(peliId);
@@ -133,9 +130,10 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
-    public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, @PathVariable Integer peliId, BindingResult result) {
+    public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, @PathVariable Integer peliId, BindingResult result,Model model) {
         if (result.hasErrors()) {
-            return "redirect:/listaa";
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        return "kommentoi";
         }
         kommenttiService.add(kommentti);
         Integer id = kommentti.getId();
@@ -149,9 +147,10 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaArvostelu/{peliId}")
-    public String lisaaArvostelu(@Valid @ModelAttribute Arvostelu arvostelu, @PathVariable Integer peliId, BindingResult result) {
+    public String lisaaArvostelu(@Valid @ModelAttribute Arvostelu arvostelu, @PathVariable Integer peliId, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "redirect:/listaa";
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        return "arvostele";
         }
         arvosteluService.add(arvostelu);
         Integer id = arvostelu.getId();
@@ -180,15 +179,11 @@ public class PeliController {
     @RequestMapping(value = "/home")
     public String home() {
         return "home";
-<<<<<<< HEAD
+
     }
-=======
-    }  
-    
+
     @RequestMapping(value = "/error")
     public String error(){
         return "error";
     }
-    
->>>>>>> a2b3cd8e0d0f0e1df16e406886d02eb6487773b8
 }
