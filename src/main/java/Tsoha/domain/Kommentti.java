@@ -23,7 +23,9 @@ public class Kommentti implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
-    @NotNull(message = "Ethän sie voi jättää kenttää tyhjäks!")
+    @NotNull(message="Kenttä ei saa olla tyhjä")
+    @Pattern(regexp="[a-zA-Z0-9]+", 
+    message="Virheellinen syöte")
     @Column(name = "Fields")
     private String fields;
     

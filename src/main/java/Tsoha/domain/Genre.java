@@ -6,6 +6,7 @@ import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 @Entity
 public class Genre implements Serializable {
@@ -15,7 +16,9 @@ public class Genre implements Serializable {
     @Column(name="ID")
     private Integer id;
     
-    @NotNull(message = "Hullu! Mitä sie teet??")
+    @NotNull(message="Kenttä ei saa olla tyhjä")
+    @Pattern(regexp="[a-zA-Z0-9]+", 
+    message="Virheellinen syöte")
     @Column
     private String nimi;
     

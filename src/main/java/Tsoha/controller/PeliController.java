@@ -50,7 +50,7 @@ public class PeliController {
     @RequestMapping(value = "lisaaGenre", method = RequestMethod.POST)
     public String lisaaGenre(@Valid @ModelAttribute Genre genre, BindingResult result) {
         if (result.hasErrors()) {
-            return "lisaaGenre";
+            return "lisaa";
         }
         genre = genreService.add(genre);
         return "redirect:/listaa";
@@ -77,7 +77,7 @@ public class PeliController {
         return "redirect:/listaa";
     }
 
-    @RequestMapping(value="/404.html")
+    @RequestMapping(value = "/404.html")
     public String error404() {
         return "error";
     }
@@ -116,10 +116,7 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}")
-    public String liitaPeliGenreen(@Valid @PathVariable Integer peliId, @PathVariable Integer genreId, BindingResult result) {
-        if (result.hasErrors()) {
-            return "redirect:/listaa";
-        }
+    public String liitaPeliGenreen(@Valid @PathVariable Integer peliId, @PathVariable Integer genreId) {
         Peli peli = peliService.findPeli(peliId);
         Genre genre = genreService.findGenre(genreId);
         peli.setGenre(genre);
@@ -130,10 +127,10 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
-    public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, @PathVariable Integer peliId, BindingResult result,Model model) {
+    public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, BindingResult result, @PathVariable Integer peliId, Model model) {
         if (result.hasErrors()) {
         model.addAttribute("peli", peliService.findPeli(peliId));
-        return "kommentoi";
+            return "kommentoi";
         }
         kommenttiService.add(kommentti);
         Integer id = kommentti.getId();
@@ -147,10 +144,10 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaArvostelu/{peliId}")
-    public String lisaaArvostelu(@Valid @ModelAttribute Arvostelu arvostelu, @PathVariable Integer peliId, BindingResult result, Model model) {
+    public String lisaaArvostelu(@Valid @ModelAttribute Arvostelu arvostelu, BindingResult result, @PathVariable Integer peliId, Model model) {
         if (result.hasErrors()) {
         model.addAttribute("peli", peliService.findPeli(peliId));
-        return "arvostele";
+            return "arvostele";
         }
         arvosteluService.add(arvostelu);
         Integer id = arvostelu.getId();
@@ -183,7 +180,7 @@ public class PeliController {
     }
 
     @RequestMapping(value = "/error")
-    public String error(){
+    public String error() {
         return "error";
     }
 }

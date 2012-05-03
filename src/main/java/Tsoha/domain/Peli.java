@@ -15,8 +15,10 @@ public class Peli implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
-    //@Pattern(regexp="\\w+")
-    @NotNull(message = "Pitäähän pelillä nyt nimi olla..")
+    @NotNull(message="Kenttä ei saa olla tyhjä")
+    @Pattern(regexp="[a-zA-Z0-9]+", 
+    message="Virheellinen syöte")
+    
     @Column(name = "Name")
     private String nimi;
         

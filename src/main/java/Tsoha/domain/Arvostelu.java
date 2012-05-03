@@ -23,11 +23,15 @@ public class Arvostelu implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
-    @NotNull(message="Älä aina suikkaa!")
+    @NotNull(message="Kenttä ei saa olla tyhjä")
+    @Pattern(regexp="[a-zA-Z0-9]+",  
+    message="Virheellinen syöte")
     @Column(name = "Fields")
     private String fields;
   
-    @NotNull(message="Eis voiv..")
+    @NotNull(message="Kenttä ei saa olla tyhjä")
+    @Pattern(regexp="[a-zA-Z0-9]+", 
+    message="Virheellinen syöte")
     @Column(name = "Rating")
     private String rating;
     
