@@ -123,7 +123,7 @@ public class PeliController {
         Peli peli = peliService.findPeli(peliId);
         Genre genre = genreService.findGenre(genreId);
         peli.setGenre(genre);
-        genre.getPelit().add(peli);
+        genre.addPeli(peli);
         peliService.add(peli);
         genreService.add(genre);
         return "redirect:/listaa";
