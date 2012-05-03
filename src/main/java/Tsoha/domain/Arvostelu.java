@@ -23,9 +23,11 @@ public class Arvostelu implements Serializable {
     @Column(name = "ID")
     private Integer id;
     
+    @NotNull(message="Älä aina suikkaa!")
     @Column(name = "Fields")
     private String fields;
-    
+  
+    @NotNull(message="Eis voiv..")
     @Column(name = "Rating")
     private String rating;
     
