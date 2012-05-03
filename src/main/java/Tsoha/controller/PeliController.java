@@ -69,6 +69,11 @@ public class PeliController {
         peliService.remove(peli);
         return "redirect:/listaa";
     }
+    @RequestMapping(value="/404.html")
+    public String error404() {
+        return "error";
+    }
+    
     @RequestMapping(value = "poistaLaina/{peliId}")
     public String poistaLainasta(@PathVariable Integer peliId) {
         Peli peli = peliService.findPeli(peliId);
@@ -159,4 +164,10 @@ public class PeliController {
     public String home() {
         return "home";
     }  
+    
+    @RequestMapping(value = "/error")
+    public String error(){
+        return "error";
+    }
+    
 }

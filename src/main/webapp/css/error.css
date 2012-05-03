@@ -1,0 +1,14 @@
+html{
+
+    background: url(http://hqwallpapers.eu/wallpaper/1280x1024_teemo_01_desktop_wallpaper-1000173.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: fantasy;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: bold;
+    vertical-align: middle;
+    text-align: center;
+}

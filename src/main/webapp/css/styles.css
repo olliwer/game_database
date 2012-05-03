@@ -1,14 +1,21 @@
+html{
+    background-image:url(http://www.bitewallpapers.com/games/game%20wallpaper/space%20invaders/part%203/Space_invaders_wallpaper_classic-game.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
 body
 {
-    
-    background-image:url(http://www.bitewallpapers.com/games/game%20wallpaper/space%20invaders/part%203/Space_invaders_wallpaper_classic-game.jpg);
+
+
     font-family: fantasy;
     font-size: 40px;
     font-style: normal;
     font-weight: bold;
     vertical-align: middle;
     text-align: center;
-    background-position: right right;
 }
 h1
 {
@@ -23,9 +30,9 @@ h1
 }
 
 #container {
-	text-align:left;
-	width:500px;
-	margin: 0 auto;
+    text-align:left;
+    width:500px;
+    margin: 0 auto;
 }
 
 a {
@@ -41,8 +48,8 @@ a:active {
 }
 
 input{
-	margin:0;
-	text-align:right;
+    margin:0;
+    text-align:right;
 }
 
 p
