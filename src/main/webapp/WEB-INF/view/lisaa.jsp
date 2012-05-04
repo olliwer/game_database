@@ -1,6 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
     "http://www.w3.org/TR/html4/loose.dtd">
 
@@ -15,15 +16,14 @@
             </tr>
         </table>
         <div id="container">
-            <form action="lisaaPeli" method="POST">
-                <span style="margin-top:15px;">Pelin nimi: <input type="text" name="nimi"></span> 
+            <form:form commandName="peli" action="lisaaPeli" method="POST">
+                <span>Pelin nimi: <form:input path="nimi"/><form:errors path="nimi"/></span> 
                 <input type="submit">
-            </form>
-
-            <form action="lisaaGenre" method="POST">
-                <span style="margin-top:15px;">Genren nimi: <input type="text" name="nimi" ></span> 
-                <input type="submit">
-            </form>
+            </form:form>
+            <form:form commandName="genre" action="lisaaGenre" method="POST">
+                <span>Genren nimi: <form:input path="nimi"/><form:errors path="nimi"/></span> 
+               <input type="submit">
+            </form:form>     
         </div>
     </body>
 </html>

@@ -39,8 +39,9 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaPeli", method = RequestMethod.POST)
-    public String lisaa(@Valid @ModelAttribute Peli peli, BindingResult result) {
+    public String lisaa(@Valid @ModelAttribute("peli") Peli peli, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            model.addAttribute("genre", new Genre());
             return "lisaa";
         }
         peli = peliService.add(peli);
@@ -48,8 +49,9 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaGenre", method = RequestMethod.POST)
-    public String lisaaGenre(@Valid @ModelAttribute Genre genre, BindingResult result) {
+    public String lisaaGenre(@Valid @ModelAttribute("genre") Genre genre, BindingResult result, Model model) {
         if (result.hasErrors()) {
+            model.addAttribute("peli", new Peli());
             return "lisaa";
         }
         genre = genreService.add(genre);
@@ -174,7 +176,9 @@ public class PeliController {
     }
 
     @RequestMapping(value = "/lisaa")
-    public String lisaaKuuntelija() {
+    public String lisaaKuuntelija(Model model) {
+        model.addAttribute("peli", new Peli());
+        model.addAttribute("genre", new Genre());
         return "lisaa";
     }
 

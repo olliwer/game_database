@@ -18,8 +18,8 @@ public class Genre implements Serializable {
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
     @Pattern(regexp="[a-zA-Z0-9]+", 
-    message="Virheellinen syöte")
-    @Column
+    message="Virheellinen syöte. Vain numeroita tai kirjaimia.")
+    @Column(name="Name")
     private String nimi;
     
     @OneToMany
