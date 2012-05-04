@@ -81,6 +81,11 @@ public class PeliController {
     public String error404() {
         return "error";
     }
+    
+    @RequestMapping(value = "/403.html")
+    public String error403() {
+        return "authorityError";
+    }
 
     @RequestMapping(value = "poistaLaina/{peliId}")
     public String poistaLainasta(@PathVariable Integer peliId) {
@@ -182,5 +187,10 @@ public class PeliController {
     @RequestMapping(value = "/error")
     public String error() {
         return "error";
+    }
+    
+    @RequestMapping(value = "/authorityError")
+    public String authError() {
+        return "authorityError";
     }
 }
