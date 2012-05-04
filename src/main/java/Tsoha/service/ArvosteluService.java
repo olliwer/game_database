@@ -15,7 +15,7 @@ public interface ArvosteluService {
     public void remove(Arvostelu arvostelu) throws DataAccessException;
 
     public List<Arvostelu> listAll();
-
+    @PreAuthorize("hasRole('user') or hasRole('master')")
     public Arvostelu add(Arvostelu arvostelu);
 
     public Arvostelu findArvostelu(Integer arvosteluId);

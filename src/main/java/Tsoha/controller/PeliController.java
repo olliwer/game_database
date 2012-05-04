@@ -39,7 +39,7 @@ public class PeliController {
     }
 
     @RequestMapping(value = "lisaaPeli", method = RequestMethod.POST)
-    public String lisaa(@Valid @ModelAttribute("peli") Peli peli, BindingResult result, Model model) {
+    public String lisaaPeli(@Valid @ModelAttribute("peli") Peli peli, BindingResult result, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("genre", new Genre());
             return "lisaa";
@@ -76,6 +76,20 @@ public class PeliController {
     public String poistaPeli(@PathVariable Integer peliId) {
         Peli peli = peliService.findPeli(peliId);
         peliService.remove(peli);
+        return "redirect:/listaa";
+    }
+    
+    @RequestMapping(value = "poistaArvostelu/{arvosteluId}")
+    public String poistaArvostelu(@PathVariable Integer arvosteluId) {
+        Arvostelu arvostelu = arvosteluService.findArvostelu(arvosteluId);
+        arvosteluService.remove(arvostelu);
+        return "redirect:/listaa";
+    }
+    
+    @RequestMapping(value = "poistaKommentti/{kommenttiId}")
+    public String poistaKommentti(@PathVariable Integer kommenttiId) {
+        Kommentti kommentti = kommenttiService.findKommentti(kommenttiId);
+        kommenttiService.remove(kommentti);
         return "redirect:/listaa";
     }
 
@@ -139,11 +153,8 @@ public class PeliController {
         model.addAttribute("peli", peliService.findPeli(peliId));
             return "kommentoi";
         }
+        kommentti.setPeli(peliService.findPeli(peliId));
         kommenttiService.add(kommentti);
-        Integer id = kommentti.getId();
-        Kommentti comment = kommenttiService.findKommentti(id);
-        comment.setPeli(peliService.findPeli(peliId));
-        comment = kommenttiService.add(comment);
         Peli peli = peliService.findPeli(peliId);
         peli.getKommentit().add(kommentti);
         peliService.add(peli);
@@ -156,13 +167,10 @@ public class PeliController {
         model.addAttribute("peli", peliService.findPeli(peliId));
             return "arvostele";
         }
+        arvostelu.setPeli(peliService.findPeli(peliId));
         arvosteluService.add(arvostelu);
-        Integer id = arvostelu.getId();
-        Arvostelu rate = arvosteluService.findArvostelu(id);
-        rate.setPeli(peliService.findPeli(peliId));
-        rate = arvosteluService.add(rate);
         Peli peli = peliService.findPeli(peliId);
-        peli.getArvostelut().add(rate);
+        peli.getArvostelut().add(arvostelu);
         peliService.add(peli);
         return "redirect:/listaa";
     }

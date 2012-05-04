@@ -29,7 +29,7 @@ public class Kommentti implements Serializable {
     @Column(name = "Fields")
     private String fields;
     
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     private Peli peli;
     
     @Column(name = "PelinId")

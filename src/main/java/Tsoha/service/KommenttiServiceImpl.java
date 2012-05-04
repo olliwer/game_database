@@ -6,6 +6,7 @@ package Tsoha.service;
 
 import Tsoha.domain.Kommentti;
 import Tsoha.repository.KommenttiRepository;
+import Tsoha.repository.PeliRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,9 +18,16 @@ public class KommenttiServiceImpl implements KommenttiService {
 
     @Autowired
     KommenttiRepository kommenttiRepository;
+    
+    @Autowired
+    PeliRepository peliRepository;
 
+    @Transactional
     @Override
     public void remove(Kommentti kommentti) {
+        kommentti.getPeli().getKommentit().remove(kommentti);
+        peliRepository.save(kommentti.getPeli());
+        kommentti.setPeli(null);
         kommenttiRepository.delete(kommentti);
     }
 

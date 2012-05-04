@@ -35,7 +35,7 @@ public class Arvostelu implements Serializable {
     @Column(name = "Rating")
     private String rating;
     
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne
     private Peli peli;
 
     public Peli getPeli() {

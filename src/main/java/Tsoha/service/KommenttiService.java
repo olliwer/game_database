@@ -15,7 +15,7 @@ public interface KommenttiService {
     public void remove(Kommentti kommentti) throws DataAccessException;
 
     public List<Kommentti> listAll();
-
+    @PreAuthorize("hasRole('user') or hasRole('master')")
     public Kommentti add(Kommentti kommentti);
 
     public Kommentti findKommentti(Integer id);

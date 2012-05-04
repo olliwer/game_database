@@ -15,7 +15,7 @@ public interface GenreService {
     public void remove(Genre genre) throws DataAccessException;
 
     public List<Genre> listAll();
-
+    @PreAuthorize("hasRole('user') or hasRole('master')")
     public Genre add(Genre genre);
     
     public Genre findGenre(Integer genreId);

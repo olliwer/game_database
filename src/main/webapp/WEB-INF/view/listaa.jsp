@@ -25,11 +25,13 @@
             Kommentit: </br>
             <c:forEach var="kommentti" items="${peli.kommentit}" varStatus="status">
                 ${kommentti.fields} <c:if test="${not status.last}">,</c:if> </br>
+                <a href="poistaKommentti/${kommentti.id}"> Poista kommentti</a></br>
             </c:forEach></li>
         Arvostelut: </br>
         <c:forEach var="arvostelu" items="${peli.arvostelut}" varStatus="status">
             Arvosana: ${arvostelu.rating}</br>
             ${arvostelu.fields} <c:if test="${not status.last}">,</c:if> </br>
+            <a href="poistaArvostelu/${arvostelu.id}"> Poista arvostelu</a></br>
         </c:forEach></li>
 
     <c:if test="${!empty peli.lainassa}">
