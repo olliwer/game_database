@@ -17,7 +17,7 @@ public class Genre implements Serializable {
     private Integer id;
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="[a-zA-Z0-9]+", 
+    @Pattern(regexp="([a-zA-Z0-9]+[:space:]*)+", 
     message="Virheellinen syöte. Vain numeroita tai kirjaimia.")
     @Column(name="Name")
     private String nimi;

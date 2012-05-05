@@ -16,7 +16,7 @@ public class Peli implements Serializable {
     private Integer id;
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="[a-zA-Z0-9]+", 
+    @Pattern(regexp="([a-zA-Z0-9]+[\\s]*)+", 
     message="Virheellinen syöte. Vain numeroita tai kirjaimia.")
     @Column(name = "Name")
     private String nimi;
