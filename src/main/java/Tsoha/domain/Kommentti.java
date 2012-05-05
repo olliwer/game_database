@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package Tsoha.domain;
 
 import java.io.Serializable;
@@ -11,10 +7,6 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-/**
- *
- * @author Dragondejavu
- */
 @Entity
 public class Kommentti implements Serializable {
 
@@ -24,7 +16,7 @@ public class Kommentti implements Serializable {
     private Integer id;
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="([a-zA-Z0-9]+[:space:]*)+", 
+    @Pattern(regexp="([a-zA-Z0-9]+[\\s]*)+",
     message="Virheellinen syöte")
     @Column(name = "Fields")
     private String fields;

@@ -10,14 +10,14 @@ import javax.validation.constraints.Pattern;
 
 @Entity
 public class Genre implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     @Column(name="ID")
     private Integer id;
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="([a-zA-Z0-9]+[:space:]*)+", 
+    @Pattern(regexp="([a-zA-Z0-9]+[\\s]*)+",
     message="Virheellinen syöte. Vain numeroita tai kirjaimia.")
     @Column(name="Name")
     private String nimi;
@@ -55,6 +55,4 @@ public class Genre implements Serializable {
         }
         peli.setGenre(this);
     }
-    
-    
 }
