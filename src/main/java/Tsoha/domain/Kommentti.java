@@ -23,9 +23,6 @@ public class Kommentti implements Serializable {
     
     @ManyToOne
     private Peli peli;
-    
-    @Column(name = "PelinId")
-    private Integer pelinId;
 
     public String getFields() {
         return fields;
@@ -51,15 +48,4 @@ public class Kommentti implements Serializable {
         this.peli = peli;
     }
 
-    public Integer getPelinId() {
-        return pelinId;
-    }
-
-    public void setPelinId(Integer pelinId) {
-        this.pelinId = pelinId;
-    }
-
-  
-    
-    
 }
