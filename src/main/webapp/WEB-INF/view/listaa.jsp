@@ -40,7 +40,9 @@
             Lainassa: ${peli.lainassa} </br>
         </c:if>
         <a href="kommentoi/${peli.id}"> Kommentoi</a>
+        <c:if test="${empty peli.genre}">
         <a href="lisaaGenreen/${peli.id}"> Liitä peli genreen</a>
+        </c:if>
         <a href="arvostele/${peli.id}"> Arvostele peli</a>
         <a href="poista/${peli.id}"> Poista peli</a>
         <c:if test="${empty peli.lainassa}">
