@@ -66,7 +66,7 @@ Genret:</br>
     </c:forEach>
     </br>
 
-    <a href="lisaa">Lisää peli tai genre tai arvostelu</a>
+    <a href="lisaa">Lisää peli tai genre</a>
     </br>
     </br>
     Etsi pelit jotka lainassa henkilöllä:
