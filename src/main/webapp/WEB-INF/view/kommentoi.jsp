@@ -14,6 +14,6 @@
     <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
         <span>Kommentoi peliä ${peli.nimi}: <textarea name="fields" cols="40" rows="5"></textarea>
         </span><br>
-        <input type="submit" value="Kommentoi!">
+        <input type="submit" value="Kommentoi">
     </form>
 </html>

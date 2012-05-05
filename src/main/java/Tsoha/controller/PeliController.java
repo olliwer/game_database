@@ -59,10 +59,9 @@ public class PeliController {
     }
 
     @RequestMapping(value = "listaa")
-    public String listaaPelitJaGenretJaArvostelut(Model model) {
+    public String listaaPelitJaGenret(Model model) {
         model.addAttribute("pelit", peliService.listAll());
         model.addAttribute("genret", genreService.listAll());
-        model.addAttribute("arvostelut", arvosteluService.listAll());
         return "listaa";
     }
 

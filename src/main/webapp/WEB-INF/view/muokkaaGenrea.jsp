@@ -15,7 +15,7 @@
         Muokkaa genren ${genre.nimi} nimeä:
         <form action="<%=request.getContextPath()%>/muokkaaGenrenTietoja/${genre.id}" method="POST">
             <span>Genren nimi: <input type="text" name="nimi"></span>
-            <input type="submit" value="Muokkaa!">
+            <input type="submit" value="Muokkaa">
         </form>
     </body>
 </html>

@@ -12,7 +12,7 @@
         <title>Lainaa peli</title>
     </head>
     <body>
-        Kenelle lainataan?
+        Kenelle peli ${peli.nimi} lainataan?</br>
         <form action="<%=request.getContextPath()%>/lainaaPeli/${peli.id}" method="POST">
         <input type="text" name="lainassa">
         <input type="submit" value="Lainaa peli">

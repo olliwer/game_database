@@ -12,6 +12,7 @@
         <title>Game database</title>
     </head>
     <body>
+        Valitse pelille ${peli.nimi} genre. </br>
         <c:forEach var="genre" items="${genres}">
             <form action="<%=request.getContextPath()%>/lisaaPeliGenreen/${peli.id}/${genre.id}" method="POST">
                 <li>Id: ${genre.id}, Genre: ${genre.nimi}, Lisää tähän genreen </li>               
