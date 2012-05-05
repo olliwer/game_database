@@ -18,11 +18,11 @@
         <div id="container">
             <form:form commandName="peli" action="lisaaPeli" method="POST">
                 <span>Pelin nimi: <form:input path="nimi"/><form:errors path="nimi"/></span> 
-                <input type="submit">
+                <input type="submit" value="Lisää peli">
             </form:form>
             <form:form commandName="genre" action="lisaaGenre" method="POST">
                 <span>Genren nimi: <form:input path="nimi"/><form:errors path="nimi"/></span> 
-               <input type="submit">
+               <input type="submit" value="Lisää genre">
             </form:form>     
             <a href="<%=request.getContextPath()%>/listaa">Katso pelejä!</a>
         </div>

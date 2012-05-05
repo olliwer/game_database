@@ -73,7 +73,7 @@ Genret:</br>
     Etsi pelit jotka lainassa henkilöllä:
     <form action="<%=request.getContextPath()%>/lainassaHenkilolla/" method="POST">
         <input type="text" name="lainassa">
-        <input type="submit">
+        <input type="submit" value="Hae">
     </form>
 </prkl>
 </body>

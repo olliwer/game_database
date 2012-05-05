@@ -15,7 +15,7 @@
         Kenelle lainataan?
         <form action="<%=request.getContextPath()%>/lainaaPeli/${peli.id}" method="POST">
         <input type="text" name="lainassa">
-        <input type="submit">
+        <input type="submit" value="Lainaa peli">
     </form>
     </body>
 </html>

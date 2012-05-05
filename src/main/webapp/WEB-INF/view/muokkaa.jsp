@@ -15,7 +15,7 @@
         Muokkaa pelin ${peli.nimi} nimeä:
         <form action="<%=request.getContextPath()%>/muokkaaPelia/${peli.id}" method="POST">
             <span>Pelin nimi: <input type="text" name="nimi"></span>
-            <input type="submit">
+            <input type="submit" value="Muokkaa!">
         </form>
     </body>
 </html>

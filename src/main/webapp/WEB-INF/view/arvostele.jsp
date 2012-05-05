@@ -16,6 +16,6 @@
         <span>Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></br>
         <span>Arvosana (1-5): <input type="text" name="rating"></span> 
         </span><br>
-        <input type="submit" value="Arvostele!">
+        <input type="submit" value="Arvostele">
     </form>
 </html>
