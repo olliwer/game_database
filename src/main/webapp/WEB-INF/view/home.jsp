@@ -16,6 +16,6 @@
     </head>
     <body>
         <h1>Tervetuloa pelitietokantaan!</h1>
-        <a href="lisaa">Lisää peli</a>
+        <a href="lisaa">Sisään</a>
     </body>
 

@@ -22,7 +22,7 @@ public class Arvostelu implements Serializable {
     private String fields;
   
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="([a-zA-Z0-9]+[\\s|\\.|\\?|\\!|\\,]*)+",
+    @Pattern(regexp="([1-5])",
     message="Virheellinen syöte")
     @Column(name = "Rating")
     private String rating;

@@ -12,8 +12,8 @@
         <title>Game database</title>
     </head>
     <form action="<%=request.getContextPath()%>/lisaaKommentti/${peli.id}" method="POST">
-        <span>Kommentti: <textarea name="fields" cols="40" rows="5"></textarea>
+        <span>Kommentoi peliä ${peli.nimi}: <textarea name="fields" cols="40" rows="5"></textarea>
         </span><br>
-        <input type="submit">
+        <input type="submit" value="Kommentoi!">
     </form>
 </html>

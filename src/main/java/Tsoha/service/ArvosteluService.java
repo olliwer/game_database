@@ -11,7 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 public interface ArvosteluService {
 
-    @PreAuthorize("hasRole('master')")
+    @PreAuthorize("hasRole('master') or hasRole('user')")
     public void remove(Arvostelu arvostelu) throws DataAccessException;
 
     public List<Arvostelu> listAll();

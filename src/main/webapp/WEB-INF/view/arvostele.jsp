@@ -12,9 +12,10 @@
         <title>Game database</title>
     </head>
     <form action="<%=request.getContextPath()%>/lisaaArvostelu/${peli.id}" method="POST">
+        Arvostele peliä ${peli.nimi}</br>
         <span>Arvostelu: <textarea name="fields" cols="40" rows="5"></textarea></br>
-        <span>Arvosana: <input type="text" name="rating"></span> 
+        <span>Arvosana (1-5): <input type="text" name="rating"></span> 
         </span><br>
-        <input type="submit">
+        <input type="submit" value="Arvostele!">
     </form>
 </html>

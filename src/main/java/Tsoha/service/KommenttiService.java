@@ -11,7 +11,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 
 public interface KommenttiService {
 
-    @PreAuthorize("hasRole('master')")
+    @PreAuthorize("hasRole('master') or hasRole('user')")
     public void remove(Kommentti kommentti) throws DataAccessException;
 
     public List<Kommentti> listAll();
