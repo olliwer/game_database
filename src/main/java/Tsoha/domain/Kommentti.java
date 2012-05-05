@@ -16,7 +16,7 @@ public class Kommentti implements Serializable {
     private Integer id;
     
     @NotNull(message="Kenttä ei saa olla tyhjä")
-    @Pattern(regexp="([a-zA-Z0-9]+[\\s]*)+",
+    @Pattern(regexp="([a-zA-Z0-9]+[\\s|\\.|\\?|\\!|\\,]*)+",
     message="Virheellinen syöte")
     @Column(name = "Fields")
     private String fields;
