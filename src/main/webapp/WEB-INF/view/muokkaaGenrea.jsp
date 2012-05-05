@@ -1,6 +1,6 @@
 <%-- 
-    Document   : muokkaa
-    Created on : May 5, 2012, 2:02:38 PM
+    Document   : muokkaaGenrea
+    Created on : May 5, 2012, 4:45:49 PM
     Author     : Olli Rissanen
 --%>
 
@@ -9,12 +9,12 @@
 <html>
     <head><link rel="stylesheet" type="text/css" href="${pageContext.servletContext.contextPath}/css/styles.css" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Muokkaa peliä</title>
+        <title>Muokkaa genreä</title>
     </head>
     <body>
-        Muokkaa pelin nimeä:
-        <form action="<%=request.getContextPath()%>/muokkaaPelia/${peli.id}" method="POST">
-            <span>Pelin nimi: <input type="text" name="nimi"></span>
+        Muokkaa genren nimeä:
+        <form action="<%=request.getContextPath()%>/muokkaaGenrenTietoja/${genre.id}" method="POST">
+            <span>Genren nimi: <input type="text" name="nimi"></span>
             <input type="submit">
         </form>
     </body>

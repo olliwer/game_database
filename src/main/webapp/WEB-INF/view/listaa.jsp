@@ -63,6 +63,7 @@ Genret:</br>
         <c:forEach var="peli" items="${genre.pelit}" varStatus="status">
             ${peli.nimi} <c:if test="${not status.last}">,</c:if> </br>
         </c:forEach>
+            <a href="muokkaaGenrea/${genre.id}"> Muokkaa genren tietoja</a></br>
     </c:forEach>
     </br>
 
