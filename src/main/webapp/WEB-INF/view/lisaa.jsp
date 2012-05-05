@@ -24,6 +24,7 @@
                 <span>Genren nimi: <form:input path="nimi"/><form:errors path="nimi"/></span> 
                <input type="submit">
             </form:form>     
+            <a href="<%=request.getContextPath()%>/listaa">Katso pelejä!</a>
         </div>
     </body>
 </html>

@@ -146,6 +146,20 @@ public class PeliController {
         genreService.add(genre);
         return "redirect:/listaa";
     }
+    @RequestMapping(value = "muokkaaPelia/{peliId}")
+    public String muokkaaPelinNimea(@RequestParam String nimi, @PathVariable Integer peliId){
+        Peli peli = peliService.findPeli(peliId);
+        peli.setNimi(nimi);
+        peliService.add(peli);  
+        return "redirect:/listaa";
+    }
+    
+    @RequestMapping(value = "muokkaa/{peliId}")
+    public String muokkaaPelia(@PathVariable Integer peliId, Model model){
+        model.addAttribute("peli", peliService.findPeli(peliId));
+        return "muokkaa";
+    }
+            
 
     @RequestMapping(value = "lisaaKommentti/{peliId}")
     public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, BindingResult result, @PathVariable Integer peliId, Model model) {

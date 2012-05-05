@@ -51,6 +51,7 @@
         <c:if test="${!empty peli.lainassa}">
             <a href="poistaLaina/${peli.id}"> Poista lainasta</a>
         </c:if>
+        <a href="muokkaa/${peli.id}"> Muokkaa pelin tietoja</a>
     </c:forEach>
     </br>
 </prkl>

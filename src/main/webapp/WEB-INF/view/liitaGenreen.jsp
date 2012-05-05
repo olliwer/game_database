@@ -18,5 +18,6 @@
                 <input type="submit">
             </form>
         </c:forEach>
+        <a href="<%=request.getContextPath()%>/listaa">Pois!</a>
 </body>
 </html>
