@@ -129,13 +129,13 @@ public class PeliController {
         return "lainaa";
     }
 
-    @RequestMapping(value = "lainassaHenkilolla")
+    @RequestMapping(value = "lainassaHenkilolla", method = RequestMethod.POST)
     public String lainassa(Model model, @RequestParam String lainassa) {
         model.addAttribute("pelit", peliService.findByLainassa(lainassa));
         return "lainassa";
     }
 
-    @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}")
+    @RequestMapping(value = "lisaaPeliGenreen/{peliId}/{genreId}", method = RequestMethod.POST)
     public String liitaPeliGenreen(@Valid @PathVariable Integer peliId, @PathVariable Integer genreId) {
         Peli peli = peliService.findPeli(peliId);
         Genre genre = genreService.findGenre(genreId);
@@ -174,7 +174,7 @@ public class PeliController {
     }
             
 
-    @RequestMapping(value = "lisaaKommentti/{peliId}")
+    @RequestMapping(value = "lisaaKommentti/{peliId}", method = RequestMethod.POST)
     public String lisaaKommentti(@Valid @ModelAttribute Kommentti kommentti, BindingResult result, @PathVariable Integer peliId, Model model) {
         if (result.hasErrors()) {
         model.addAttribute("peli", peliService.findPeli(peliId));
@@ -188,7 +188,7 @@ public class PeliController {
         return "redirect:/listaa";
     }
 
-    @RequestMapping(value = "lisaaArvostelu/{peliId}")
+    @RequestMapping(value = "lisaaArvostelu/{peliId}", method = RequestMethod.POST)
     public String lisaaArvostelu(@Valid @ModelAttribute Arvostelu arvostelu, BindingResult result, @PathVariable Integer peliId, Model model) {
         if (result.hasErrors()) {
         model.addAttribute("peli", peliService.findPeli(peliId));
@@ -202,7 +202,7 @@ public class PeliController {
         return "redirect:/listaa";
     }
 
-    @RequestMapping(value = "lainaaPeli/{peliId}")
+    @RequestMapping(value = "lainaaPeli/{peliId}", method = RequestMethod.POST)
     public String lainaaPeli(@PathVariable Integer peliId, @RequestParam String lainassa) {
         Peli peli = peliService.findPeli(peliId);
         peli.setLainassa(lainassa);
