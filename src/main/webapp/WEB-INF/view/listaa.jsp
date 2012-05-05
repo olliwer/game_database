@@ -56,7 +56,7 @@
 Genret:</br>
 <prkl>
     <c:forEach var="genre" items="${genret}">
-        Genren ${genre.nimi} pelit: </br>
+        Genren -${genre.nimi}- pelit: </br>
         <c:forEach var="peli" items="${genre.pelit}" varStatus="status">
             ${peli.nimi} <c:if test="${not status.last}">,</c:if> </br>
         </c:forEach>
